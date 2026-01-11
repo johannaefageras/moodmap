@@ -1,6 +1,6 @@
 import type { User } from '$lib/types';
 
-const BASE_URL = '/api/auth';
+const BASE_URL = `${import.meta.env.VITE_API_BASE_URL ?? ''}/api/auth`;
 
 interface AuthResponse {
 	user: User;
