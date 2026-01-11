@@ -1,0 +1,440 @@
+{
+  "version": 1,
+  "smhiParameters": {
+    "pathHint": "timeSeries[].parameters[].name",
+    "required": ["Wsymb2"],
+    "recommended": ["t", "pcat", "pmean", "pmin", "pmax", "tstm", "tcc_mean", "ws", "gust", "vis"],
+    "notes": [
+      "Use Wsymb2 as the primary baseline for cloudiness/precipitation.",
+      "Use tstm (thunder probability) to enable thunder composites.",
+      "Use pcat if available; otherwise infer precip type from t + pmean/pmin/pmax.",
+      "Use tcc_mean for sky coverage (clear/partly/overcast) when Wsymb2 is missing.",
+      "Use ws/gust for wind-driven icon overrides (e.g., wind, wind-snow).",
+      "Use vis plus Wsymb2 to decide fog/mist when possible."
+    ]
+  },
+  "thresholds": {
+    "tempC": {
+      "snowMax": 0.5,
+      "sleetMax": 1.5
+    },
+    "precipMmPerH": {
+      "drizzleMax": 0.2,
+      "rainMax": 2.0,
+      "extremeMin": 10.0
+    },
+    "windMs": {
+      "windyMin": 10.0
+    }
+  },
+  "wsymb2Map": {
+    "1": { "base": "clear", "precip": "none" },
+    "2": { "base": "clear", "precip": "none" },
+    "3": { "base": "partly-cloudy", "precip": "none" },
+    "4": { "base": "partly-cloudy", "precip": "none" },
+    "5": { "base": "cloudy", "precip": "none" },
+    "6": { "base": "overcast", "precip": "none" },
+    "7": { "base": "fog", "precip": "none" },
+    "8": { "base": "partly-cloudy", "precip": "rain" },
+    "9": { "base": "partly-cloudy", "precip": "rain" },
+    "10": { "base": "partly-cloudy", "precip": "rain", "intensity": "extreme" },
+    "11": { "base": "partly-cloudy", "precip": "rain", "thunder": true },
+    "12": { "base": "partly-cloudy", "precip": "sleet" },
+    "13": { "base": "partly-cloudy", "precip": "sleet" },
+    "14": { "base": "partly-cloudy", "precip": "sleet", "intensity": "extreme" },
+    "15": { "base": "partly-cloudy", "precip": "snow" },
+    "16": { "base": "partly-cloudy", "precip": "snow" },
+    "17": { "base": "partly-cloudy", "precip": "snow", "intensity": "extreme" },
+    "18": { "base": "overcast", "precip": "rain" },
+    "19": { "base": "overcast", "precip": "rain" },
+    "20": { "base": "overcast", "precip": "rain", "intensity": "extreme" },
+    "21": { "base": "overcast", "precip": "rain", "thunder": true },
+    "22": { "base": "overcast", "precip": "sleet" },
+    "23": { "base": "overcast", "precip": "sleet" },
+    "24": { "base": "overcast", "precip": "sleet", "intensity": "extreme" },
+    "25": { "base": "overcast", "precip": "snow" },
+    "26": { "base": "overcast", "precip": "snow" },
+    "27": { "base": "overcast", "precip": "snow", "intensity": "extreme" }
+  },
+  "pcatHints": {
+    "note": "Map pcat values to precip types using SMHI docs; keep this mapping aligned with the API version you use.",
+    "fallbackOrder": ["pcat", "t+pmean", "Wsymb2"]
+  },
+  "iconGroups": {
+    "clear": {
+      "day": "clear-day.json",
+      "night": "clear-night.json"
+    },
+    "partly-cloudy": {
+      "day": "partly-cloudy-day.json",
+      "night": "partly-cloudy-night.json"
+    },
+    "cloudy": {
+      "default": "cloudy.json"
+    },
+    "overcast": {
+      "default": "overcast.json",
+      "day": "overcast-day.json",
+      "night": "overcast-night.json"
+    },
+    "precip": {
+      "rain": {
+        "default": "rain.json",
+        "overcast": {
+          "default": "overcast-rain.json",
+          "day": "overcast-day-rain.json",
+          "night": "overcast-night-rain.json"
+        },
+        "partly-cloudy": {
+          "day": "partly-cloudy-day-rain.json",
+          "night": "partly-cloudy-night-rain.json"
+        }
+      },
+      "drizzle": {
+        "default": "drizzle.json",
+        "overcast": {
+          "default": "overcast-drizzle.json",
+          "day": "overcast-day-drizzle.json",
+          "night": "overcast-night-drizzle.json"
+        },
+        "partly-cloudy": {
+          "day": "partly-cloudy-day-drizzle.json",
+          "night": "partly-cloudy-night-drizzle.json"
+        }
+      },
+      "snow": {
+        "default": "snow.json",
+        "overcast": {
+          "default": "overcast-snow.json",
+          "day": "overcast-day-snow.json",
+          "night": "overcast-night-snow.json"
+        },
+        "partly-cloudy": {
+          "day": "partly-cloudy-day-snow.json",
+          "night": "partly-cloudy-night-snow.json"
+        }
+      },
+      "sleet": {
+        "default": "sleet.json",
+        "overcast": {
+          "default": "overcast-sleet.json",
+          "day": "overcast-day-sleet.json",
+          "night": "overcast-night-sleet.json"
+        },
+        "partly-cloudy": {
+          "day": "partly-cloudy-day-sleet.json",
+          "night": "partly-cloudy-night-sleet.json"
+        }
+      },
+      "hail": {
+        "default": "hail.json",
+        "overcast": {
+          "default": "overcast-hail.json",
+          "day": "overcast-day-hail.json",
+          "night": "overcast-night-hail.json"
+        },
+        "partly-cloudy": {
+          "day": "partly-cloudy-day-hail.json",
+          "night": "partly-cloudy-night-hail.json"
+        }
+      }
+    },
+    "thunder": {
+      "default": "thunderstorms.json",
+      "day": "thunderstorms-day.json",
+      "night": "thunderstorms-night.json",
+      "overcast": {
+        "default": "thunderstorms-overcast.json",
+        "day": "thunderstorms-day-overcast.json",
+        "night": "thunderstorms-night-overcast.json"
+      },
+      "rain": {
+        "default": "thunderstorms-rain.json",
+        "day": "thunderstorms-day-rain.json",
+        "night": "thunderstorms-night-rain.json",
+        "overcast": {
+          "default": "thunderstorms-overcast-rain.json",
+          "day": "thunderstorms-day-overcast-rain.json",
+          "night": "thunderstorms-night-overcast-rain.json"
+        },
+        "extreme": {
+          "default": "thunderstorms-extreme-rain.json",
+          "day": "thunderstorms-day-extreme-rain.json",
+          "night": "thunderstorms-night-extreme-rain.json"
+        }
+      },
+      "snow": {
+        "default": "thunderstorms-snow.json",
+        "day": "thunderstorms-day-snow.json",
+        "night": "thunderstorms-night-snow.json",
+        "overcast": {
+          "default": "thunderstorms-overcast-snow.json",
+          "day": "thunderstorms-day-overcast-snow.json",
+          "night": "thunderstorms-night-overcast-snow.json"
+        },
+        "extreme": {
+          "default": "thunderstorms-extreme-snow.json",
+          "day": "thunderstorms-day-extreme-snow.json",
+          "night": "thunderstorms-night-extreme-snow.json"
+        }
+      },
+      "extreme": {
+        "default": "thunderstorms-extreme.json",
+        "day": "thunderstorms-day-extreme.json",
+        "night": "thunderstorms-night-extreme.json"
+      }
+    },
+    "extreme": {
+      "default": "extreme.json",
+      "day": "extreme-day.json",
+      "night": "extreme-night.json",
+      "rain": {
+        "default": "extreme-rain.json",
+        "day": "extreme-day-rain.json",
+        "night": "extreme-night-rain.json"
+      },
+      "snow": {
+        "default": "extreme-snow.json",
+        "day": "extreme-day-snow.json",
+        "night": "extreme-night-snow.json"
+      },
+      "sleet": {
+        "default": "extreme-sleet.json",
+        "day": "extreme-day-sleet.json",
+        "night": "extreme-night-sleet.json"
+      },
+      "drizzle": {
+        "default": "extreme-drizzle.json",
+        "day": "extreme-day-drizzle.json",
+        "night": "extreme-night-drizzle.json"
+      },
+      "hail": {
+        "default": "extreme-hail.json",
+        "day": "extreme-day-hail.json",
+        "night": "extreme-night-hail.json"
+      },
+      "fog": {
+        "default": "extreme-fog.json",
+        "day": "extreme-day-fog.json",
+        "night": "extreme-night-fog.json"
+      },
+      "haze": {
+        "default": "extreme-haze.json",
+        "day": "extreme-day-haze.json",
+        "night": "extreme-night-haze.json"
+      },
+      "smoke": {
+        "default": "extreme-smoke.json",
+        "day": "extreme-day-smoke.json",
+        "night": "extreme-night-smoke.json"
+      }
+    },
+    "visibility": {
+      "fog": {
+        "default": "fog.json",
+        "day": "fog-day.json",
+        "night": "fog-night.json",
+        "overcast": {
+          "default": "overcast-fog.json",
+          "day": "overcast-day-fog.json",
+          "night": "overcast-night-fog.json"
+        },
+        "partly-cloudy": {
+          "day": "partly-cloudy-day-fog.json",
+          "night": "partly-cloudy-night-fog.json"
+        }
+      },
+      "haze": {
+        "default": "haze.json",
+        "day": "haze-day.json",
+        "night": "haze-night.json",
+        "overcast": {
+          "default": "overcast-haze.json",
+          "day": "overcast-day-haze.json",
+          "night": "overcast-night-haze.json"
+        },
+        "partly-cloudy": {
+          "day": "partly-cloudy-day-haze.json",
+          "night": "partly-cloudy-night-haze.json"
+        }
+      },
+      "smoke": {
+        "default": "smoke.json",
+        "overcast": {
+          "default": "overcast-smoke.json",
+          "day": "overcast-day-smoke.json",
+          "night": "overcast-night-smoke.json"
+        },
+        "partly-cloudy": {
+          "day": "partly-cloudy-day-smoke.json",
+          "night": "partly-cloudy-night-smoke.json"
+        }
+      },
+      "dust": {
+        "default": "dust.json",
+        "day": "dust-day.json",
+        "night": "dust-night.json"
+      },
+      "mist": {
+        "default": "mist.json"
+      }
+    },
+    "wind": {
+      "default": "wind.json",
+      "snow": "wind-snow.json"
+    },
+    "extras": {
+      "sun-hot": "sun-hot.json",
+      "rainbow": "rainbow.json",
+      "rainbow-clear": "rainbow-clear.json",
+      "tornado": "tornado.json",
+      "hurricane": "hurricane.json",
+      "lightning-bolt": "lightning-bolt.json",
+      "not-available": "not-available.json",
+      "celsius": "celsius.json",
+      "fahrenheit": "fahrenheit.json"
+    }
+  },
+  "resolverOutline": [
+    "1) Build a map of SMHI parameters from timeSeries[].parameters[] (name -> value).",
+    "2) Determine day/night from solar time at the location; keep as 'day' or 'night'.",
+    "3) Start with Wsymb2 to set base (clear/partly/overcast) and precip type.",
+    "4) Override/augment with pcat if present; else infer precip type from t + pmean/pmin/pmax.",
+    "5) If tstm exceeds your threshold, set thunder=true.",
+    "6) If precip amount exceeds extremeMin, set intensity=extreme; else choose drizzle/rain/snow/sleet by thresholds.",
+    "7) If Wsymb2 or vis indicates fog/mist/haze/smoke/dust, prefer visibility icons.",
+    "8) If wind exceeds windyMin, prefer wind or wind-snow when precip is snow.",
+    "9) Resolve to lottie using iconGroups, falling back in this order: coverage+day/night -> coverage -> generic precip -> generic base -> not-available."
+  ],
+  "lottieCatalog": [
+    "clear-day.json",
+    "clear-night.json",
+    "cloudy.json",
+    "drizzle.json",
+    "dust-day.json",
+    "dust-night.json",
+    "dust.json",
+    "extreme-day-drizzle.json",
+    "extreme-day-fog.json",
+    "extreme-day-hail.json",
+    "extreme-day-haze.json",
+    "extreme-day-rain.json",
+    "extreme-day-sleet.json",
+    "extreme-day-smoke.json",
+    "extreme-day-snow.json",
+    "extreme-day.json",
+    "extreme-drizzle.json",
+    "extreme-fog.json",
+    "extreme-hail.json",
+    "extreme-haze.json",
+    "extreme-night-drizzle.json",
+    "extreme-night-fog.json",
+    "extreme-night-hail.json",
+    "extreme-night-haze.json",
+    "extreme-night-rain.json",
+    "extreme-night-sleet.json",
+    "extreme-night-smoke.json",
+    "extreme-night-snow.json",
+    "extreme-night.json",
+    "extreme-rain.json",
+    "extreme-sleet.json",
+    "extreme-smoke.json",
+    "extreme-snow.json",
+    "extreme.json",
+    "fahrenheit.json",
+    "fog-day.json",
+    "fog-night.json",
+    "fog.json",
+    "hail.json",
+    "haze-day.json",
+    "haze-night.json",
+    "haze.json",
+    "hurricane.json",
+    "lightning-bolt.json",
+    "mist.json",
+    "not-available.json",
+    "overcast-day-drizzle.json",
+    "overcast-day-fog.json",
+    "overcast-day-hail.json",
+    "overcast-day-haze.json",
+    "overcast-day-rain.json",
+    "overcast-day-sleet.json",
+    "overcast-day-smoke.json",
+    "overcast-day-snow.json",
+    "overcast-day.json",
+    "overcast-drizzle.json",
+    "overcast-fog.json",
+    "overcast-hail.json",
+    "overcast-haze.json",
+    "overcast-night-drizzle.json",
+    "overcast-night-fog.json",
+    "overcast-night-hail.json",
+    "overcast-night-haze.json",
+    "overcast-night-rain.json",
+    "overcast-night-sleet.json",
+    "overcast-night-smoke.json",
+    "overcast-night-snow.json",
+    "overcast-night.json",
+    "overcast-rain.json",
+    "overcast-sleet.json",
+    "overcast-smoke.json",
+    "overcast-snow.json",
+    "overcast.json",
+    "partly-cloudy-day-drizzle.json",
+    "partly-cloudy-day-fog.json",
+    "partly-cloudy-day-hail.json",
+    "partly-cloudy-day-haze.json",
+    "partly-cloudy-day-rain.json",
+    "partly-cloudy-day-sleet.json",
+    "partly-cloudy-day-smoke.json",
+    "partly-cloudy-day-snow.json",
+    "partly-cloudy-day.json",
+    "partly-cloudy-night-drizzle.json",
+    "partly-cloudy-night-fog.json",
+    "partly-cloudy-night-hail.json",
+    "partly-cloudy-night-haze.json",
+    "partly-cloudy-night-rain.json",
+    "partly-cloudy-night-sleet.json",
+    "partly-cloudy-night-smoke.json",
+    "partly-cloudy-night-snow.json",
+    "partly-cloudy-night.json",
+    "rain.json",
+    "rainbow-clear.json",
+    "rainbow.json",
+    "sleet.json",
+    "smoke.json",
+    "snow.json",
+    "sun-hot.json",
+    "thunderstorms-day-extreme-rain.json",
+    "thunderstorms-day-extreme-snow.json",
+    "thunderstorms-day-extreme.json",
+    "thunderstorms-day-overcast-rain.json",
+    "thunderstorms-day-overcast-snow.json",
+    "thunderstorms-day-overcast.json",
+    "thunderstorms-day-rain.json",
+    "thunderstorms-day-snow.json",
+    "thunderstorms-day.json",
+    "thunderstorms-extreme-rain.json",
+    "thunderstorms-extreme-snow.json",
+    "thunderstorms-extreme.json",
+    "thunderstorms-night-extreme-rain.json",
+    "thunderstorms-night-extreme-snow.json",
+    "thunderstorms-night-extreme.json",
+    "thunderstorms-night-overcast-rain.json",
+    "thunderstorms-night-overcast-snow.json",
+    "thunderstorms-night-overcast.json",
+    "thunderstorms-night-rain.json",
+    "thunderstorms-night-snow.json",
+    "thunderstorms-night.json",
+    "thunderstorms-overcast-rain.json",
+    "thunderstorms-overcast-snow.json",
+    "thunderstorms-overcast.json",
+    "thunderstorms-rain.json",
+    "thunderstorms-snow.json",
+    "thunderstorms.json",
+    "tornado.json",
+    "wind-snow.json",
+    "wind.json",
+    "celsius.json"
+  ]
+}

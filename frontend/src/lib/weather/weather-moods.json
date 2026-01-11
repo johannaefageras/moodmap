@@ -1,0 +1,1392 @@
+{
+  "version": 1,
+  "source": "frontend/src/lib/weather/weather-mapping.json",
+  "moods": {
+    "clear-day": {
+      "icon": "clear-day.json",
+      "label": "",
+      "phrases": [
+        "Solen är här. Du får ta plats i din egen takt.",
+        "Klart väder ute. Inget krav på dig på klarhet inuti. Du får vila om du vill.",
+        "Ljuset håller sig stadigt idag. Du behöver inte skynda.",
+        "En ljus dag som inte ber dig prestera. Du är okej precis här.",
+        "Solen gör sin grej. Det räcker så. Du får vila om du vill."
+      ]
+    },
+    "clear-night": {
+      "icon": "clear-night.json",
+      "label": "",
+      "phrases": [
+        "Natten är klar och stilla. Du får ta det i din takt.",
+        "Mörkret är lugnt, inte tomt. Det räcker att du är.",
+        "Stjärnorna skyndar inte. Du får heller.",
+        "En tyst natt som får vara som den är. Det räcker att du är.",
+        "Klar himmel. Tankarna får dröja. Det räcker att du är."
+      ]
+    },
+    "cloudy": {
+      "icon": "cloudy.json",
+      "label": "",
+      "phrases": [
+        "Molnen håller världen lite mjukare idag. Du kan andas långsamt.",
+        "Allt är inte tydligt. Det är okej. Du behöver inte skynda.",
+        "En grå dag utan brådska. Det är helt okej att ta det lugnt.",
+        "Molnigt, men stabilt. Du kan andas långsamt.",
+        "Ljuset sipprar fram ändå. Det räcker att du är."
+      ]
+    },
+    "drizzle": {
+      "icon": "drizzle.json",
+      "label": "",
+      "phrases": [
+        "Regnet tvekar lite. Du får också göra det.",
+        "Små droppar, låg volym på dagen. Det räcker att du är.",
+        "Det faller lätt. Inget att stå emot. Det räcker att du är.",
+        "Ett stillsamt regn som inte kräver något. Du får ta det i din takt.",
+        "Vädret tar det försiktigt. Du får vila om du vill."
+      ]
+    },
+    "dust-day": {
+      "icon": "dust-day.json",
+      "label": "",
+      "phrases": [
+        "Luften är grumlig. Sikten får vara begränsad. Du behöver inte skynda.",
+        "Allt syns inte tydligt just nu. Du får vila om du vill.",
+        "Damm i luften. Paus i blicken. Du gör så gott du kan.",
+        "En dag som ber om långsamma steg. Det är helt okej att ta det lugnt.",
+        "Världen är lite suddig, och det är tillåtet. Du får ta det i din takt."
+      ]
+    },
+    "dust-night": {
+      "icon": "dust-night.json",
+      "label": "",
+      "phrases": [
+        "Natten är disig. Allt behöver inte synas. Du kan andas långsamt.",
+        "Damm i mörkret. Ta det långsamt. Du kan andas långsamt.",
+        "Sikten är låg, men du är här.",
+        "En natt som inte kräver orientering. Du kan andas långsamt.",
+        "Mörkret bär på partiklar, inte krav. Du får vila om du vill."
+      ]
+    },
+    "dust": {
+      "icon": "dust.json",
+      "label": "",
+      "phrases": [
+        "Luften är tung idag. Du får vila om du vill.",
+        "Allt känns lite matt. Det får vara så. Du får ta det i din takt.",
+        "Damm i rörelse, tempo i vila. Du får vila om du vill.",
+        "En dag för pauser mellan stegen. Du behöver inte skynda.",
+        "Sikten svajar. Du får pressa dig."
+      ]
+    },
+    "extreme-day-drizzle": {
+      "icon": "extreme-day-drizzle.json",
+      "label": "",
+      "phrases": [
+        "Regnet tar i mer än nödvändigt. Du får vila om du vill.",
+        "En blöt dag med högt tempo utanför. Du får ta det i din takt.",
+        "Det faller mycket. Du kan falla tillbaka.",
+        "Vädret rusar. Du får gå långsamt.",
+        "Mycket regn, låg förväntan. Det är helt okej att ta det lugnt."
+      ]
+    },
+    "extreme-day-fog": {
+      "icon": "extreme-day-fog.json",
+      "label": "",
+      "phrases": [
+        "Dimman ligger tät och bestämd. Du kan andas långsamt.",
+        "Allt är nära och långt på samma gång. Du kan andas långsamt.",
+        "En dag utan horisont. Det är helt okej att ta det lugnt.",
+        "Sikten är borta. Närvaron räcker. Det räcker att du är.",
+        "Dimman tar över rummet. Det är helt okej att ta det lugnt."
+      ]
+    },
+    "extreme-day-hail": {
+      "icon": "extreme-day-hail.json",
+      "label": "",
+      "phrases": [
+        "Haglet gör väsen av sig. Du behöver inte skynda.",
+        "En stökig dag utanför fönstret. Du kan andas långsamt.",
+        "Vädret slår på hårt. Du får.",
+        "Smällar i luften, stillhet här. Det räcker att du är.",
+        "Det är intensivt där ute. Det är helt okej att ta det lugnt."
+      ]
+    },
+    "extreme-day-haze": {
+      "icon": "extreme-day-haze.json",
+      "label": "",
+      "phrases": [
+        "Luften är tjock idag. Du behöver inte skynda.",
+        "Allt känns inlindat i dis. Det räcker att du är.",
+        "En dag där konturerna mjuknar. Du behöver inte skynda.",
+        "Sikten är dämpad. Tempot också. Du får ta det i din takt.",
+        "Inget är skarpt just nu. Det räcker att du är."
+      ]
+    },
+    "extreme-day-rain": {
+      "icon": "extreme-day-rain.json",
+      "label": "",
+      "phrases": [
+        "Regnet tar plats överallt. Du gör så gott du kan.",
+        "En dag som låter tung. Det räcker att du är.",
+        "Regnet ger ingen vila. Du är okej precis här.",
+        "Ute är det mycket. Inne får vara lite. Det räcker att du är.",
+        "Allt sköljs om. Du får vila om du vill."
+      ]
+    },
+    "extreme-day-sleet": {
+      "icon": "extreme-day-sleet.json",
+      "label": "",
+      "phrases": [
+        "Det faller blandat, tveksamt. Du kan andas långsamt.",
+        "Vädret kan inte bestämma sig. Du får ta det i din takt.",
+        "Is och regn i samma andetag. Du kan andas långsamt.",
+        "En dag med halt mellanrum. Det räcker att du är.",
+        "Allt rör sig försiktigt. Du gör så gott du kan."
+      ]
+    },
+    "extreme-day-smoke": {
+      "icon": "extreme-day-smoke.json",
+      "label": "",
+      "phrases": [
+        "Luften bär på mer än den orkar. Du får ta det i din takt.",
+        "Allt luktar avstånd. Det räcker att du är.",
+        "En dag att ta andetagen långsamt. Det är helt okej att ta det lugnt.",
+        "Sikten är reducerad, kraven på dig på dig också. Du kan andas långsamt.",
+        "Röken ligger kvar. Det räcker att du är."
+      ]
+    },
+    "extreme-day-snow": {
+      "icon": "extreme-day-snow.json",
+      "label": "",
+      "phrases": [
+        "Snön faller ihärdigt. Du behöver inte skynda.",
+        "En dag som dämpar ljuden. Det är helt okej att ta det lugnt.",
+        "Allt blir långsammare. Det räcker att du är.",
+        "Världen täcks över ett lager i taget. Du är okej precis här.",
+        "Det är okej att stanna inne. Det räcker att du är."
+      ]
+    },
+    "extreme-day": {
+      "icon": "extreme-day.json",
+      "label": "",
+      "phrases": [
+        "Det är mycket på alla fronter. Du är okej precis här.",
+        "En dag som tar i mer än nödvändigt. Du är okej precis här.",
+        "Vädret är intensivt. Du får vara det.",
+        "Allt är förstärkt just nu. Du är okej precis här.",
+        "En dag som får vara tung utan förklaring. Du kan andas långsamt."
+      ]
+    },
+    "extreme-drizzle": {
+      "icon": "extreme-drizzle.json",
+      "label": "",
+      "phrases": [
+        "Regnet går all in. Du behöver inte skynda.",
+        "Det droppar utan paus. Du får vila om du vill.",
+        "Vädret överdriver lite idag. Du är okej precis här.",
+        "Mycket fukt, låg energi. Du gör så gott du kan.",
+        "En dag där paraplyet jobbar hårt. Det är helt okej att ta det lugnt."
+      ]
+    },
+    "extreme-fog": {
+      "icon": "extreme-fog.json",
+      "label": "",
+      "phrases": [
+        "Dimman släpper inte taget. Det räcker att du är.",
+        "Allt är nära och långt samtidigt. Du behöver inte skynda.",
+        "Sikten är minimal. Kraven också. Det räcker att du är.",
+        "En dag utan överblick. Det räcker att du är.",
+        "Dimman sänker allt till sitt tempo. Du får vila om du vill."
+      ]
+    },
+    "extreme-hail": {
+      "icon": "extreme-hail.json",
+      "label": "",
+      "phrases": [
+        "Haglet tar plats. Det räcker att du är.",
+        "Det smäller mer än det behövs. Du får vila om du vill.",
+        "Vädret är stökigt och högljutt. Du får vila om du vill.",
+        "En dag att dra sig undan lite. Du får vila om du vill.",
+        "Mycket rörelse utanför. Du behöver inte skynda."
+      ]
+    },
+    "extreme-haze": {
+      "icon": "extreme-haze.json",
+      "label": "",
+      "phrases": [
+        "Luften är tät och envis. Du får vila om du vill.",
+        "Allt känns inbäddat i dis. Du gör så gott du kan.",
+        "En dag där konturerna löses upp. Du är okej precis här.",
+        "Sikten är låg, men lugnet bär. Du får vila om du vill.",
+        "Världen håller andan lite. Du får vila om du vill."
+      ]
+    },
+    "extreme-night-drizzle": {
+      "icon": "extreme-night-drizzle.json",
+      "label": "",
+      "phrases": [
+        "Regnet droppar envist i mörkret. Det räcker att du är.",
+        "En natt med ihållande ljud. Du gör så gott du kan.",
+        "Vattnet faller utan att fråga. Du är okej precis här.",
+        "Mörkret får sällskap av regn. Du behöver inte skynda.",
+        "En blöt natt som inte skyndar. Du behöver inte skynda."
+      ]
+    },
+    "extreme-night-fog": {
+      "icon": "extreme-night-fog.json",
+      "label": "",
+      "phrases": [
+        "Dimman ligger tät i natten. Du får vila om du vill.",
+        "I natten känns allt både nära och långt bort. Det räcker att du är.",
+        "En natt utan horisont. Du får ta det i din takt.",
+        "Sikten försvinner. Det räcker att vara här. Du får ta det i din takt.",
+        "Mörkret håller sig stilla. Det är helt okej att ta det lugnt."
+      ]
+    },
+    "extreme-night-hail": {
+      "icon": "extreme-night-hail.json",
+      "label": "",
+      "phrases": [
+        "Haglet hörs mer än det syns. Du får ta det i din takt.",
+        "Smällar i natten. Du kan andas långsamt.",
+        "Vädret gör sig påmint. Du är okej precis här.",
+        "En stökig natt utanför fönstret. Du är okej precis här.",
+        "Det smäller rejält i natten. Du kan andas långsamt."
+      ]
+    },
+    "extreme-night-haze": {
+      "icon": "extreme-night-haze.json",
+      "label": "",
+      "phrases": [
+        "Luften är tung även i mörkret. Du får vila om du vill.",
+        "Diset släpper inte taget. Du behöver inte skynda.",
+        "En natt där konturer försvinner. Du kan andas långsamt.",
+        "Andas långsamt. Du kan andas långsamt.",
+        "Allt känns inlindat. Det räcker att du är."
+      ]
+    },
+    "extreme-night-rain": {
+      "icon": "extreme-night-rain.json",
+      "label": "",
+      "phrases": [
+        "Regnet tar över natten. Det räcker att du är.",
+        "En mörk natt med tungt fall. Du får vila om du vill.",
+        "Vattnet fortsätter, oavsett. Det räcker att du är.",
+        "Natten är blöt, du får vara mjuk.",
+        "Natten sköljs om. Du får ta det i din takt."
+      ]
+    },
+    "extreme-night-sleet": {
+      "icon": "extreme-night-sleet.json",
+      "label": "",
+      "phrases": [
+        "Is och regn blandas i mörkret. Du gör så gott du kan.",
+        "En natt som kräver försiktiga steg. Du kan andas långsamt.",
+        "Det faller tveksamt och halt. Du får vila om du vill.",
+        "Vädret famlar. Du kan stå still.",
+        "Allt rör sig långsammare nu. Du behöver inte skynda."
+      ]
+    },
+    "extreme-night-smoke": {
+      "icon": "extreme-night-smoke.json",
+      "label": "",
+      "phrases": [
+        "Natten bär på för mycket rök. Du gör så gott du kan.",
+        "Röken ligger kvar i natten. Du kan andas långsamt.",
+        "Andningen får ta sin tid. Det är helt okej att ta det lugnt.",
+        "Mörkret känns tätare än vanligt. Du kan andas långsamt.",
+        "Allt är dämpat. Du kan andas långsamt."
+      ]
+    },
+    "extreme-night-snow": {
+      "icon": "extreme-night-snow.json",
+      "label": "",
+      "phrases": [
+        "Snön faller tungt i mörkret. Du får ta det i din takt.",
+        "Natten blir tystare lager för lager. Du får vila om du vill.",
+        "Allt dämpas. Du behöver inte skynda.",
+        "En natt som sänker tempot. Du får ta det i din takt.",
+        "Snön tar över ljuden. Det räcker att du är."
+      ]
+    },
+    "extreme-night": {
+      "icon": "extreme-night.json",
+      "label": "",
+      "phrases": [
+        "Natten är intensiv utan att vara brådskande. Du kan andas långsamt.",
+        "Mycket händer där ute. Du är okej precis här.",
+        "Mörkret håller trycket uppe. Det är helt okej att ta det lugnt.",
+        "En natt som tar plats. Det räcker att du är.",
+        "Allt känns förstärkt. Du får vila om du vill."
+      ]
+    },
+    "extreme-rain": {
+      "icon": "extreme-rain.json",
+      "label": "",
+      "phrases": [
+        "Regnet ger sig inte. Du kan andas långsamt.",
+        "Vattnet faller utan paus. Du får vila om du vill.",
+        "En dag där allt sköljs om. Det är helt okej att ta det lugnt.",
+        "Det är mycket utanför. Du behöver inte skynda.",
+        "Regnet fortsätter sitt arbete. Det är helt okej att ta det lugnt."
+      ]
+    },
+    "extreme-sleet": {
+      "icon": "extreme-sleet.json",
+      "label": "",
+      "phrases": [
+        "Is och regn i ohelig blandning. Du gör så gott du kan.",
+        "Allt är halt och tveksamt. Du gör så gott du kan.",
+        "En dag som kräver långsamma steg. Du behöver inte skynda.",
+        "Vädret är obestämt. Du får vara det också.",
+        "Inget rör sig utan eftertanke. Du kan andas långsamt."
+      ]
+    },
+    "extreme-smoke": {
+      "icon": "extreme-smoke.json",
+      "label": "",
+      "phrases": [
+        "Luften är tung och påträngande. Du kan andas långsamt.",
+        "Allt känns instängt. Du får vila om du vill.",
+        "En dag att ta andetagen varsamt. Du behöver inte skynda.",
+        "Sikten är låg, tempot likaså. Du är okej precis här.",
+        "Röken stannar kvar. Du kan andas långsamt."
+      ]
+    },
+    "extreme-snow": {
+      "icon": "extreme-snow.json",
+      "label": "",
+      "phrases": [
+        "Snön tar över med kraft. Du kan andas långsamt.",
+        "Allt dämpas snabbt. Du kan andas långsamt.",
+        "En dag där världen saktar in rejält. Det är helt okej att ta det lugnt.",
+        "Snön gör inget halvdant. Det är helt okej att ta det lugnt.",
+        "Det är okej att ge upp tempot. Du får vila om du vill."
+      ]
+    },
+    "extreme": {
+      "icon": "extreme.json",
+      "label": "",
+      "phrases": [
+        "Allt är uppskruvat just nu. Du kan andas långsamt.",
+        "En dag med maximal intensitet. Du är okej precis här.",
+        "Vädret tar i från tårna. Du kan andas långsamt.",
+        "Mycket pågår samtidigt. Det räcker att du är.",
+        "Det är extremt. Punkt. Du kan andas långsamt."
+      ]
+    },
+    "fog-day": {
+      "icon": "fog-day.json",
+      "label": "",
+      "phrases": [
+        "Dimman ligger stadigt över dagen. Det är helt okej att ta det lugnt.",
+        "Allt är mjukt inramat. Du kan andas långsamt.",
+        "En dag utan tydliga konturer. Du är okej precis här.",
+        "Sikten är begränsad, närvaron räcker. Du kan andas långsamt.",
+        "Dimman håller världen nära. Det räcker att du är."
+      ]
+    },
+    "fog-night": {
+      "icon": "fog-night.json",
+      "label": "",
+      "phrases": [
+        "Dimman ligger stilla i natten. Du kan andas långsamt.",
+        "I natt känns allt både nära och långt. Du får vila om du vill.",
+        "En natt utan riktning. Du kan andas långsamt.",
+        "Sikten är borta. Lugnet finns kvar. Du får ta det i din takt.",
+        "Mörkret känns mjukt. Du får vila om du vill."
+      ]
+    },
+    "fog": {
+      "icon": "fog.json",
+      "label": "",
+      "phrases": [
+        "Dimman dröjer sig kvar. Du kan andas långsamt.",
+        "Världen känns inramad. Du får vila om du vill.",
+        "En dag utan skarpa kanter. Du är okej precis här.",
+        "Sikten är låg men stabil. Du får vila om du vill.",
+        "Dimman bestämmer tempot. Du behöver inte skynda."
+      ]
+    },
+    "hail": {
+      "icon": "hail.json",
+      "label": "",
+      "phrases": [
+        "Haglet faller utan förvarning. Du behöver inte skynda.",
+        "Små smällar mot världen. Du behöver inte skynda.",
+        "Vädret gör sig hörd. Det är helt okej att ta det lugnt.",
+        "En dag med oväntat tempo. Du är okej precis här.",
+        "Det är stökigt där ute. Det räcker att du är."
+      ]
+    },
+    "haze-day": {
+      "icon": "haze-day.json",
+      "label": "",
+      "phrases": [
+        "Luften är lätt disig. Du gör så gott du kan.",
+        "Allt känns något dämpat. Du gör så gott du kan.",
+        "En dag där konturer suddas ut. Du behöver inte skynda.",
+        "Sikten är mjuk, inte tom. Du kan andas långsamt.",
+        "Tempot sjunker lite. Du får ta det i din takt."
+      ]
+    },
+    "haze-night": {
+      "icon": "haze-night.json",
+      "label": "",
+      "phrases": [
+        "Diset ligger kvar i mörkret. Det är helt okej att ta det lugnt.",
+        "Natten känns inlindad. Du gör så gott du kan.",
+        "Allt är lite suddigt. Du behöver inte skynda.",
+        "En natt utan skarpa linjer. Du gör så gott du kan.",
+        "Luften håller sig tät. Du får ta det i din takt."
+      ]
+    },
+    "haze": {
+      "icon": "haze.json",
+      "label": "",
+      "phrases": [
+        "Luften är disig utan dramatik. Du får vila om du vill.",
+        "Allt känns lite avlägset. Du får vila om du vill.",
+        "En dag med mjuka konturer. Du kan andas långsamt.",
+        "Sikten är dämpad, inte förlorad. Du gör så gott du kan.",
+        "Världen känns lätt inlindad. Du behöver inte skynda."
+      ]
+    },
+    "hurricane": {
+      "icon": "hurricane.json",
+      "label": "",
+      "phrases": [
+        "Vädret tar i med hela kroppen. Du får ta det i din takt.",
+        "Allt rör sig fortare än nödvändigt. Du får vila om du vill.",
+        "En dag där naturen höjer rösten. Du får vila om du vill.",
+        "Det är kaotiskt där ute. Du kan andas långsamt.",
+        "Du får matcha intensiteten."
+      ]
+    },
+    "mist": {
+      "icon": "mist.json",
+      "label": "",
+      "phrases": [
+        "Luften känns lätt fuktig. Det är helt okej att ta det lugnt.",
+        "Allt är stilla och nära. Du får vila om du vill.",
+        "En dag som viskar snarare än pratar. Det räcker att du är.",
+        "Små droppar i luften. Det är helt okej att ta det lugnt.",
+        "Världen känns mjukare. Det räcker att du är."
+      ]
+    },
+    "not-available": {
+      "icon": "not-available.json",
+      "label": "",
+      "phrases": [
+        "Vädret är oklart just nu. Du är okej precis här.",
+        "Inga uppdateringar. Bara nuet. Det är helt okej att ta det lugnt.",
+        "Allt är tillfälligt pausat. Du är okej precis här.",
+        "Ingen data. Ingen brådska. Du gör så gott du kan.",
+        "Vi vet inte. Det är okej. Du får ta det i din takt."
+      ]
+    },
+    "overcast-day-drizzle": {
+      "icon": "overcast-day-drizzle.json",
+      "label": "",
+      "phrases": [
+        "Molnen hänger lågt och droppar lätt. Du får ta det i din takt.",
+        "En grå dag med försiktigt regn. Du gör så gott du kan.",
+        "Allt är jämnt, dämpat. Du kan andas långsamt.",
+        "Regnet håller låg profil. Du är okej precis här.",
+        "En dag som inte kräver mycket. Det räcker att du är."
+      ]
+    },
+    "overcast-day-fog": {
+      "icon": "overcast-day-fog.json",
+      "label": "",
+      "phrases": [
+        "Dimman ligger lågt under molnen. Du behöver inte skynda.",
+        "Allt känns inneslutet. Du kan andas långsamt.",
+        "Dagen saknar djup, och det får vara. Du får vila om du vill.",
+        "Sikten är kort, dagen är långsam. Du får ta det i din takt.",
+        "Världen håller sig nära. Du är okej precis här."
+      ]
+    },
+    "overcast-day-hail": {
+      "icon": "overcast-day-hail.json",
+      "label": "",
+      "phrases": [
+        "Haglet bryter det grå. Du gör så gott du kan.",
+        "Små smällar mot stillheten. Du får ta det i din takt.",
+        "Vädret överraskar lite. Du får ta det i din takt.",
+        "En dag som låter mer än den syns. Du får vila om du vill.",
+        "Det är stökigt men begränsat. Det räcker att du är."
+      ]
+    },
+    "overcast-day-haze": {
+      "icon": "overcast-day-haze.json",
+      "label": "",
+      "phrases": [
+        "Diset blandas med molnen. Du får vila om du vill.",
+        "Allt är mjukt och dämpat. Du får ta det i din takt.",
+        "En dag utan tydliga linjer. Det räcker att du är.",
+        "Sikten är dämpad, tempot också. Du får ta det i din takt.",
+        "Världen känns inlindad. Det räcker att du är."
+      ]
+    },
+    "overcast-day-rain": {
+      "icon": "overcast-day-rain.json",
+      "label": "",
+      "phrases": [
+        "Regnet faller jämnt under molnen. Du kan andas långsamt.",
+        "En grå dag som håller i. Du får vila om du vill.",
+        "Allt känns konsekvent vått. Du gör så gott du kan.",
+        "Vädret gör sitt i bakgrunden. Du får ta det i din takt.",
+        "Inget kräver uppmärksamhet. Du gör så gott du kan."
+      ]
+    },
+    "overcast-day-sleet": {
+      "icon": "overcast-day-sleet.json",
+      "label": "",
+      "phrases": [
+        "Is och regn samsas under molntäcket. Du får vila om du vill.",
+        "Allt känns halt och försiktigt. Du får vila om du vill.",
+        "Dagen vill ha försiktiga steg. Du gör så gott du kan.",
+        "Vädret drar åt två håll. Du är okej precis här.",
+        "Tempot sjunker automatiskt. Du behöver inte skynda."
+      ]
+    },
+    "overcast-day-smoke": {
+      "icon": "overcast-day-smoke.json",
+      "label": "",
+      "phrases": [
+        "Luften känns tung under molnen. Du får ta det i din takt.",
+        "Ljuset hålls tillbaka av röken. Du gör så gott du kan.",
+        "En dag där sikten håller sig låg. Du behöver inte skynda.",
+        "Röken blandas med det grå. Du gör så gott du kan.",
+        "Världen känns instängd men lugn. Det är helt okej att ta det lugnt."
+      ]
+    },
+    "overcast-day-snow": {
+      "icon": "overcast-day-snow.json",
+      "label": "",
+      "phrases": [
+        "Snön faller mjukt från ett grått tak. Du får ta det i din takt.",
+        "Under molnen blir allt tystare. Det räcker att du är.",
+        "En dag som dämpar stegen. Du får ta det i din takt.",
+        "Snön tar plats utan dramatik. Du är okej precis här.",
+        "Tempot sjunker naturligt. Du behöver inte skynda."
+      ]
+    },
+    "overcast-day": {
+      "icon": "overcast-day.json",
+      "label": "",
+      "phrases": [
+        "Molnen ligger stadigt. Det räcker att du är.",
+        "En jämn, grå dag. Det är helt okej att ta det lugnt.",
+        "Inget sticker ut. Det är okej. Du är okej precis här.",
+        "Dagen håller samma ton. Du gör så gott du kan.",
+        "En dag utan överraskningar. Det räcker att du är."
+      ]
+    },
+    "overcast-drizzle": {
+      "icon": "overcast-drizzle.json",
+      "label": "",
+      "phrases": [
+        "Regnet droppar diskret. Du behöver inte skynda.",
+        "En grå dag med låg intensitet. Du kan andas långsamt.",
+        "Vädret håller sig i bakgrunden. Du gör så gott du kan.",
+        "Små droppar, lugnt tempo. Det räcker att du är.",
+        "Inget behöver skyndas. Du behöver inte skynda."
+      ]
+    },
+    "overcast-fog": {
+      "icon": "overcast-fog.json",
+      "label": "",
+      "phrases": [
+        "Dimman vilar under molnen. Du behöver inte skynda.",
+        "Allt känns nära. Du gör så gott du kan.",
+        "En dag utan djup. Du kan andas långsamt.",
+        "Sikten är begränsad men stabil. Det är helt okej att ta det lugnt.",
+        "Världen håller sig samman. Du behöver inte skynda."
+      ]
+    },
+    "overcast-hail": {
+      "icon": "overcast-hail.json",
+      "label": "",
+      "phrases": [
+        "Haglet bryter igenom det grå. Du får vila om du vill.",
+        "Smällar mot ett annars stilla väder. Det är helt okej att ta det lugnt.",
+        "Molnen släpper taget för en stund. Du kan andas långsamt.",
+        "Det låter mer än det syns. Du kan andas långsamt.",
+        "En dag som gör sig hörd. Du får ta det i din takt."
+      ]
+    },
+    "overcast-haze": {
+      "icon": "overcast-haze.json",
+      "label": "",
+      "phrases": [
+        "Diset ligger tungt under molnen. Det är helt okej att ta det lugnt.",
+        "Allt känns mjukt och avskärmat. Du kan andas långsamt.",
+        "En dag utan skarpa kontraster. Du får ta det i din takt.",
+        "Sikten är dämpad men jämn. Du är okej precis här.",
+        "Världen håller låg profil. Det är helt okej att ta det lugnt."
+      ]
+    },
+    "overcast-night-drizzle": {
+      "icon": "overcast-night-drizzle.json",
+      "label": "",
+      "phrases": [
+        "Regnet droppar stilla i mörkret. Du gör så gott du kan.",
+        "En grå natt med lågmält fall. Du gör så gott du kan.",
+        "Allt sker utan dramatik. Du får vila om du vill.",
+        "Vädret viskar. Du är okej precis här.",
+        "Natten håller tempot nere. Du behöver inte skynda."
+      ]
+    },
+    "overcast-night-fog": {
+      "icon": "overcast-night-fog.json",
+      "label": "",
+      "phrases": [
+        "Dimman ligger tät under molnen. Du får vila om du vill.",
+        "Natten känns nära. Du är okej precis här.",
+        "Allt är inneslutet. Du får vila om du vill.",
+        "Sikten är kort men stabil. Det är helt okej att ta det lugnt.",
+        "Mörkret håller sig mjukt. Det räcker att du är."
+      ]
+    },
+    "overcast-night-hail": {
+      "icon": "overcast-night-hail.json",
+      "label": "",
+      "phrases": [
+        "Haglet hörs mot natten. Du får ta det i din takt.",
+        "Smällar i det grå mörkret. Du får ta det i din takt.",
+        "Vädret stör stillheten lite. Du är okej precis här.",
+        "En natt som låter mer än den syns. Du är okej precis här.",
+        "Det är oroligt där ute. Det är helt okej att ta det lugnt."
+      ]
+    },
+    "overcast-night-haze": {
+      "icon": "overcast-night-haze.json",
+      "label": "",
+      "phrases": [
+        "Diset ligger kvar under nattmolnen. Det är helt okej att ta det lugnt.",
+        "Allt är inbäddat i nattdis. Du är okej precis här.",
+        "En natt utan skarpa konturer. Du behöver inte skynda.",
+        "Sikten är mjuk, även i natt. Du får vila om du vill.",
+        "Mörkret ligger mjukt över allt. Du kan andas långsamt."
+      ]
+    },
+    "overcast-night-rain": {
+      "icon": "overcast-night-rain.json",
+      "label": "",
+      "phrases": [
+        "Regnet faller jämnt i natten. Det räcker att du är.",
+        "En grå natt som håller i. Du gör så gott du kan.",
+        "Vattnet tar plats utan brådska. Du får vila om du vill.",
+        "Allt låter dämpat. Det är helt okej att ta det lugnt.",
+        "Natten sköljs långsamt om. Det är helt okej att ta det lugnt."
+      ]
+    },
+    "overcast-night-sleet": {
+      "icon": "overcast-night-sleet.json",
+      "label": "",
+      "phrases": [
+        "I natt blandas is och regn. Du får vila om du vill.",
+        "Natten känns hal och försiktig. Du är okej precis här.",
+        "En natt för långsamma steg. Du gör så gott du kan.",
+        "Vädret tvekar sig fram. Du kan andas långsamt.",
+        "Tempot sjunker av sig självt i natten. Du kan andas långsamt."
+      ]
+    },
+    "overcast-night-smoke": {
+      "icon": "overcast-night-smoke.json",
+      "label": "",
+      "phrases": [
+        "Natten är tung under rökiga moln. Det är helt okej att ta det lugnt.",
+        "Röken stannar kvar över natten. Du får vila om du vill.",
+        "Natten blir tystare i röken. Du kan andas långsamt.",
+        "Låt andetagen gå långsamt. Du behöver inte skynda.",
+        "Mörkret känns tätare. Det räcker att du är."
+      ]
+    },
+    "overcast-night-snow": {
+      "icon": "overcast-night-snow.json",
+      "label": "",
+      "phrases": [
+        "Snön faller mjukt i mörkret. Du får vila om du vill.",
+        "Natten blir tystare. Du får ta det i din takt.",
+        "Allt dämpas lager för lager. Du får ta det i din takt.",
+        "Natten saktar ner under snön. Det är helt okej att ta det lugnt.",
+        "Snön gör natten tystare. Du gör så gott du kan."
+      ]
+    },
+    "overcast-night": {
+      "icon": "overcast-night.json",
+      "label": "",
+      "phrases": [
+        "Natten ligger tung under molnen. Du kan andas långsamt.",
+        "Allt känns nedtonat. Du behöver inte skynda.",
+        "En natt som håller världen nära. Du får vila om du vill.",
+        "Inget sticker ut i natten. Det är okej. Du får vila om du vill.",
+        "Mörkret bär molntäcket lugnt. Du kan andas långsamt."
+      ]
+    },
+    "overcast-rain": {
+      "icon": "overcast-rain.json",
+      "label": "",
+      "phrases": [
+        "Regnet faller jämnt från grå himmel. Du kan andas långsamt.",
+        "En dag som håller sig våt. Du får ta det i din takt.",
+        "Allt sker i samma tempo. Det är helt okej att ta det lugnt.",
+        "Vädret jobbar på i bakgrunden. Du får vila om du vill.",
+        "Inget överraskar. Du gör så gott du kan."
+      ]
+    },
+    "overcast-sleet": {
+      "icon": "overcast-sleet.json",
+      "label": "",
+      "phrases": [
+        "Is och regn delar på utrymmet. Du gör så gott du kan.",
+        "Allt känns försiktigt. Du gör så gott du kan.",
+        "En dag där stegen saktar in. Du gör så gott du kan.",
+        "Det vill både regna och snöa. Du får vila om du vill.",
+        "Tempot sjunker av sig självt. Det räcker att du är."
+      ]
+    },
+    "overcast-smoke": {
+      "icon": "overcast-smoke.json",
+      "label": "",
+      "phrases": [
+        "Luften är tung under molnen. Du får vila om du vill.",
+        "Allt känns instängt men stilla. Det räcker att du är.",
+        "En dag utan klar sikt. Det räcker att du är.",
+        "Röken stannar kvar över molnen. Du kan andas långsamt.",
+        "Världen drar ner volymen. Det räcker att du är."
+      ]
+    },
+    "overcast-snow": {
+      "icon": "overcast-snow.json",
+      "label": "",
+      "phrases": [
+        "Snön faller stadigt från det grå. Du får ta det i din takt.",
+        "Allt blir mjukare. Du är okej precis här.",
+        "Snön gör dagen mjukare i ljudet. Du får vila om du vill.",
+        "Snön gör jobbet tyst. Du är okej precis här.",
+        "Tempot försvinner lite. Du behöver inte skynda."
+      ]
+    },
+    "overcast": {
+      "icon": "overcast.json",
+      "label": "",
+      "phrases": [
+        "Molnen ligger jämnt över allt. Det är helt okej att ta det lugnt.",
+        "En dag utan toppar och dalar. Du kan andas långsamt.",
+        "Ljuset är dämpat men stabilt. Du är okej precis här.",
+        "Allt håller samma ton. Du får ta det i din takt.",
+        "Inget behöver hända just nu. Du är okej precis här."
+      ]
+    },
+    "partly-cloudy-day-drizzle": {
+      "icon": "partly-cloudy-day-drizzle.json",
+      "label": "",
+      "phrases": [
+        "Solen försöker, regnet svarar. Du behöver inte skynda.",
+        "Små droppar mellan molnen. Du behöver inte skynda.",
+        "En dag som inte bestämt sig. Det är helt okej att ta det lugnt.",
+        "Vädret går halvvägs. Det räcker att du är.",
+        "Ljuset och regnet delar på utrymmet. Du behöver inte skynda."
+      ]
+    },
+    "partly-cloudy-day-fog": {
+      "icon": "partly-cloudy-day-fog.json",
+      "label": "",
+      "phrases": [
+        "Dimman smyger mellan ljusa partier. Du får vila om du vill.",
+        "Sikten växlar försiktigt. Du gör så gott du kan.",
+        "En dag med skiftande närhet. Du får vila om du vill.",
+        "Ljuset bryter igenom ibland. Det är helt okej att ta det lugnt.",
+        "Allt känns tillfälligt mjukt. Det räcker att du är."
+      ]
+    },
+    "partly-cloudy-day-hail": {
+      "icon": "partly-cloudy-day-hail.json",
+      "label": "",
+      "phrases": [
+        "Haglet överraskar mellan moln. Det räcker att du är.",
+        "Smällar i ett annars lugnt ljus. Du kan andas långsamt.",
+        "Vädret byter tempo kort. Det räcker att du är.",
+        "En dag med oväntade inslag. Du kan andas långsamt.",
+        "Ljuset står kvar ändå. Du kan andas långsamt."
+      ]
+    },
+    "partly-cloudy-day-haze": {
+      "icon": "partly-cloudy-day-haze.json",
+      "label": "",
+      "phrases": [
+        "Diset lättar och dröjer om vartannat. Du behöver inte skynda.",
+        "Solen syns bakom mjuka lager. Det räcker att du är.",
+        "Dagen flyter utan skarpa kontraster. Du gör så gott du kan.",
+        "Ljuset och diset samsas. Du får vila om du vill.",
+        "Tempot håller sig lågt. Det räcker att du är."
+      ]
+    },
+    "partly-cloudy-day-rain": {
+      "icon": "partly-cloudy-day-rain.json",
+      "label": "",
+      "phrases": [
+        "Regnet kommer och går mellan molnen. Du är okej precis här.",
+        "Ljuset håller sig kvar trots dropparna. Du är okej precis här.",
+        "En dag med pauser i vädret. Du behöver inte skynda.",
+        "Växlande men stabilt. Du kan andas långsamt.",
+        "Inget håller i för länge. Du kan andas långsamt."
+      ]
+    },
+    "partly-cloudy-day-sleet": {
+      "icon": "partly-cloudy-day-sleet.json",
+      "label": "",
+      "phrases": [
+        "Is och regn turas om. Du får ta det i din takt.",
+        "En dag som tvekar sig fram. Du behöver inte skynda.",
+        "Ljuset når fram mellan skurarna. Du gör så gott du kan.",
+        "Allt kräver lite försiktighet. Du är okej precis här.",
+        "Tempot justeras automatiskt. Du får vila om du vill."
+      ]
+    },
+    "partly-cloudy-day-smoke": {
+      "icon": "partly-cloudy-day-smoke.json",
+      "label": "",
+      "phrases": [
+        "Röken dröjer i ljusare partier. Det är helt okej att ta det lugnt.",
+        "Sikten skiftar under dagen. Du behöver inte skynda.",
+        "Ljuset hittar fram ändå. Det räcker att du är.",
+        "En dag som känns dämpad. Du får ta det i din takt.",
+        "Allt är tillfälligt inlindat. Du är okej precis här."
+      ]
+    },
+    "partly-cloudy-day-snow": {
+      "icon": "partly-cloudy-day-snow.json",
+      "label": "",
+      "phrases": [
+        "Snön faller mellan ljusa gläntor. Du behöver inte skynda.",
+        "Allt växlar mellan klart och tyst. Du är okej precis här.",
+        "En dag som sänker tempot ibland. Du kan andas långsamt.",
+        "Ljuset stannar kvar. Du kan andas långsamt.",
+        "Snön kommer i omgångar. Det räcker att du är."
+      ]
+    },
+    "partly-cloudy-day": {
+      "icon": "partly-cloudy-day.json",
+      "label": "",
+      "phrases": [
+        "Molnen släpper igenom ljus. Du får ta det i din takt.",
+        "En dag med balans. Du får vila om du vill.",
+        "Inget extremt åt något håll. Du kan andas långsamt.",
+        "Ljuset finns där. Du kan andas långsamt.",
+        "Tempot är rimligt. Du är okej precis här."
+      ]
+    },
+    "partly-cloudy-night-drizzle": {
+      "icon": "partly-cloudy-night-drizzle.json",
+      "label": "",
+      "phrases": [
+        "Små droppar faller mellan molnen. Du får ta det i din takt.",
+        "Natten håller sig lätt fuktig. Det räcker att du är.",
+        "Regnet kommer försiktigt. Du behöver inte skynda.",
+        "Ljuset bakom molnen vilar. Du får vila om du vill.",
+        "En natt utan brådska. Du får ta det i din takt."
+      ]
+    },
+    "partly-cloudy-night-fog": {
+      "icon": "partly-cloudy-night-fog.json",
+      "label": "",
+      "phrases": [
+        "Dimman glider in och ut. Du är okej precis här.",
+        "Sikten skiftar i mörkret. Du gör så gott du kan.",
+        "En natt med mjuka gränser. Du får vila om du vill.",
+        "Allt känns tillfälligt nära. Du får vila om du vill.",
+        "Mörkret håller sig lugnt. Det är helt okej att ta det lugnt."
+      ]
+    },
+    "partly-cloudy-night-hail": {
+      "icon": "partly-cloudy-night-hail.json",
+      "label": "",
+      "phrases": [
+        "Haglet dyker upp kort. Du behöver inte skynda.",
+        "Smällar mellan lugna stunder. Du kan andas långsamt.",
+        "Natten byter tempo snabbt. Det räcker att du är.",
+        "Ljuset döljs, ljuden hörs. Du får ta det i din takt.",
+        "Det händer, men inte länge. Du behöver inte skynda."
+      ]
+    },
+    "partly-cloudy-night-haze": {
+      "icon": "partly-cloudy-night-haze.json",
+      "label": "",
+      "phrases": [
+        "Diset dröjer mellan molnen. Du gör så gott du kan.",
+        "Moln och dis lindar in natten. Du är okej precis här.",
+        "Dis och moln gör allt suddigt. Det räcker att du är.",
+        "Sikten varierar stillsamt. Du behöver inte skynda.",
+        "Luften ligger tät bakom molnen. Du behöver inte skynda."
+      ]
+    },
+    "partly-cloudy-night-rain": {
+      "icon": "partly-cloudy-night-rain.json",
+      "label": "",
+      "phrases": [
+        "Regnet faller i omgångar. Du får vila om du vill.",
+        "Natten släpper igenom pauser. Du gör så gott du kan.",
+        "Droppar bland stillhet. Det är helt okej att ta det lugnt.",
+        "Natten rinner på utan dramatik. Du får ta det i din takt.",
+        "En natt som inte pressar. Du gör så gott du kan."
+      ]
+    },
+    "partly-cloudy-night-sleet": {
+      "icon": "partly-cloudy-night-sleet.json",
+      "label": "",
+      "phrases": [
+        "Is och regn passerar mellan molnen. Du får ta det i din takt.",
+        "Natten kräver lite försiktighet. Du gör så gott du kan.",
+        "Allt faller i omgångar. Du behöver inte skynda.",
+        "Ljuset gömmer sig, stegen saktar in. Du är okej precis här.",
+        "En natt som tvekar sig fram. Det är helt okej att ta det lugnt."
+      ]
+    },
+    "partly-cloudy-night-smoke": {
+      "icon": "partly-cloudy-night-smoke.json",
+      "label": "",
+      "phrases": [
+        "Röken dröjer i mörka gläntor. Du kan andas långsamt.",
+        "Luften känns dämpad. Du får ta det i din takt.",
+        "Sikten skiftar lugnt under natten. Du gör så gott du kan.",
+        "Natten håller sig innesluten. Du gör så gott du kan.",
+        "Allt är mjukt avskärmat. Du kan andas långsamt."
+      ]
+    },
+    "partly-cloudy-night-snow": {
+      "icon": "partly-cloudy-night-snow.json",
+      "label": "",
+      "phrases": [
+        "Snön faller mellan molnens pauser. Du gör så gott du kan.",
+        "Natten blir tyst ibland. Du får vila om du vill.",
+        "Allt växlar mellan klart och dämpat. Du får ta det i din takt.",
+        "Snön kommer försiktigt. Det räcker att du är.",
+        "Natten sänker tempot under snö. Det är helt okej att ta det lugnt."
+      ]
+    },
+    "partly-cloudy-night": {
+      "icon": "partly-cloudy-night.json",
+      "label": "",
+      "phrases": [
+        "Molnen släpper igenom mörker och ljus. Det räcker att du är.",
+        "En natt i balans. Du behöver inte skynda.",
+        "Inget dominerar helt. Du gör så gott du kan.",
+        "Allt håller låg intensitet. Du är okej precis här.",
+        "Det får vara som det är. Det är helt okej att ta det lugnt."
+      ]
+    },
+    "rain": {
+      "icon": "rain.json",
+      "label": "",
+      "phrases": [
+        "Regnet faller stadigt. Du är okej precis här.",
+        "En dag som låter blöt. Du kan andas långsamt.",
+        "Vattnet gör sitt. Du kan andas långsamt.",
+        "Allt sköljs långsamt. Det räcker att du är.",
+        "Regnet håller i. Du behöver inte skynda."
+      ]
+    },
+    "rainbow-clear": {
+      "icon": "rainbow-clear.json",
+      "label": "",
+      "phrases": [
+        "En regnbåge i klar luft. Du får ta det i din takt.",
+        "Färgerna dyker upp utan krav. Du gör så gott du kan.",
+        "Ljuset tar en omväg genom himlen. Det räcker att du är.",
+        "Allt känns tillfälligt lättare. Du behöver inte skynda.",
+        "Himlen gör något fint. Du får ta det i din takt."
+      ]
+    },
+    "rainbow": {
+      "icon": "rainbow.json",
+      "label": "",
+      "phrases": [
+        "En regnbåge, bara sådär. Du är okej precis här.",
+        "Färger mitt i vardagen. Du kan andas långsamt.",
+        "Något oväntat syns. Du behöver inte skynda.",
+        "Ljuset stannar upp en stund. Du kan andas långsamt.",
+        "Himlen visar fler nyanser. Du får ta det i din takt."
+      ]
+    },
+    "sleet": {
+      "icon": "sleet.json",
+      "label": "",
+      "phrases": [
+        "Is och regn faller tillsammans. Du kan andas långsamt.",
+        "Allt är lite halt. Du gör så gott du kan.",
+        "En dag som kräver eftertanke. Du får ta det i din takt.",
+        "Vädret tvekar. Du gör så gott du kan.",
+        "Stegen blir försiktigare. Det är helt okej att ta det lugnt."
+      ]
+    },
+    "smoke": {
+      "icon": "smoke.json",
+      "label": "",
+      "phrases": [
+        "Luften känns tung. Du är okej precis här.",
+        "Allt är dämpat och stilla. Du får ta det i din takt.",
+        "En dag att andas långsamt. Du behöver inte skynda.",
+        "Röken dröjer sig kvar. Du får ta det i din takt.",
+        "Sikten hålls nere, men du gör det du kan."
+      ]
+    },
+    "snow": {
+      "icon": "snow.json",
+      "label": "",
+      "phrases": [
+        "Snön faller lugnt. Det räcker att du är.",
+        "Allt blir tystare. Det är helt okej att ta det lugnt.",
+        "En dag som sänker tempot. Du behöver inte skynda.",
+        "Världen mjuknar. Du får ta det i din takt.",
+        "Snön gör sitt jobb stillsamt. Du kan andas långsamt."
+      ]
+    },
+    "sun-hot": {
+      "icon": "sun-hot.json",
+      "label": "",
+      "phrases": [
+        "Solen ligger på ordentligt idag. Du får ta det i din takt.",
+        "Värmen tar plats. Det är helt okej att ta det lugnt.",
+        "En dag där tempot får sjunka. Du är okej precis här.",
+        "Het luft, långsamma steg. Det är helt okej att ta det lugnt.",
+        "Allt går lite trögare i värmen. Du kan andas långsamt."
+      ]
+    },
+    "thunderstorms-day-extreme-rain": {
+      "icon": "thunderstorms-day-extreme-rain.json",
+      "label": "",
+      "phrases": [
+        "Regnet öser ner med åska i bakgrunden. Du får vila om du vill.",
+        "Vädret tar i ordentligt. Du får vila om du vill.",
+        "Mycket faller på en gång. Det är helt okej att ta det lugnt.",
+        "En dag att dra ner på tempot. Du behöver inte skynda.",
+        "Ute är det kaos. Inne får vara lugnt. Du är okej precis här."
+      ]
+    },
+    "thunderstorms-day-extreme-snow": {
+      "icon": "thunderstorms-day-extreme-snow.json",
+      "label": "",
+      "phrases": [
+        "Snön faller kraftigt med åska runtom. Du kan andas långsamt.",
+        "Vädret gör allt samtidigt. Du får ta det i din takt.",
+        "En ovanligt intensiv vinterdag. Du får vila om du vill.",
+        "Det kan kännas överväldigande där ute. Du får vila om du vill.",
+        "Du får hålla jämna steg."
+      ]
+    },
+    "thunderstorms-day-extreme": {
+      "icon": "thunderstorms-day-extreme.json",
+      "label": "",
+      "phrases": [
+        "Åskan märks tydligt idag. Det är helt okej att ta det lugnt.",
+        "Luften är extra laddad. Du behöver inte skynda.",
+        "Det brusar på flera håll samtidigt. Du gör så gott du kan.",
+        "En dag med hög volym. Du får vila om du vill.",
+        "Det är intensivt. Punkt. Du behöver inte skynda."
+      ]
+    },
+    "thunderstorms-day-overcast-rain": {
+      "icon": "thunderstorms-day-overcast-rain.json",
+      "label": "",
+      "phrases": [
+        "Grått ljus och tungt regn, med åska. Du får ta det i din takt.",
+        "Molnen hänger lågt, regnet fortsätter. Du får vila om du vill.",
+        "En dag som känns tät och våt. Det räcker att du är.",
+        "Vädret pressar på. Du får.",
+        "Allt är dämpat, men högljutt. Du kan andas långsamt."
+      ]
+    },
+    "thunderstorms-day-overcast-snow": {
+      "icon": "thunderstorms-day-overcast-snow.json",
+      "label": "",
+      "phrases": [
+        "Snön faller tungt under åskmoln. Du kan andas långsamt.",
+        "Vintern låter högre idag. Du behöver inte skynda.",
+        "Allt känns intensivt och kallt. Du är okej precis här.",
+        "En dag där vädret tar över scenen. Du får vila om du vill.",
+        "Du får överrösta något."
+      ]
+    },
+    "thunderstorms-day-overcast": {
+      "icon": "thunderstorms-day-overcast.json",
+      "label": "",
+      "phrases": [
+        "Åskan ligger inbäddad i dagmoln. Du är okej precis här.",
+        "Dagsljuset hålls tillbaka. Du gör så gott du kan.",
+        "Luften är laddad och tung. Du får vila om du vill.",
+        "En dag med tryck i allt. Det räcker att du är.",
+        "Vädret fyller rummet. Du får ta det i din takt."
+      ]
+    },
+    "thunderstorms-day-rain": {
+      "icon": "thunderstorms-day-rain.json",
+      "label": "",
+      "phrases": [
+        "Åskan vandrar nära regnet. Du får ta det i din takt.",
+        "Luften darrar lätt i regnet. Det är helt okej att ta det lugnt.",
+        "Dagen är blöt och pulserar. Du gör så gott du kan.",
+        "Regnet låter mycket idag. Du är okej precis här.",
+        "Du får hålla dig lugn ändå."
+      ]
+    },
+    "thunderstorms-day-snow": {
+      "icon": "thunderstorms-day-snow.json",
+      "label": "",
+      "phrases": [
+        "Snö och åska delar dagen. Du får vila om du vill.",
+        "Allt händer samtidigt. Du behöver inte skynda.",
+        "En ovanlig mix på himlen. Du gör så gott du kan.",
+        "Vädret tar i från flera håll. Du behöver inte skynda.",
+        "Det är okej att sakta ner. Du behöver inte skynda."
+      ]
+    },
+    "thunderstorms-day": {
+      "icon": "thunderstorms-day.json",
+      "label": "",
+      "phrases": [
+        "Åskan präglar dagen just nu. Du kan andas långsamt.",
+        "Luften känns spänd. Du är okej precis här.",
+        "Allt är förstärkt. Det räcker att du är.",
+        "Dagen går i hög intensitet. Det räcker att du är.",
+        "Du får matcha tempot."
+      ]
+    },
+    "thunderstorms-extreme-rain": {
+      "icon": "thunderstorms-extreme-rain.json",
+      "label": "",
+      "phrases": [
+        "Regnet tar över helt. Det är helt okej att ta det lugnt.",
+        "Allt faller på en gång. Det är helt okej att ta det lugnt.",
+        "Vädret går hårt fram. Det är helt okej att ta det lugnt.",
+        "En dag där naturen höjer rösten rejält. Du får ta det i din takt.",
+        "Du får matcha stormens tempo."
+      ]
+    },
+    "thunderstorms-extreme-snow": {
+      "icon": "thunderstorms-extreme-snow.json",
+      "label": "",
+      "phrases": [
+        "Snön faller med kraft och åska runtom. Du är okej precis här.",
+        "Allt känns ovanligt intensivt. Du behöver inte skynda.",
+        "Vintern låter högre än vanligt. Du är okej precis här.",
+        "Vädret pressar på från alla håll. Det är helt okej att ta det lugnt.",
+        "Du får sakta ner ändå."
+      ]
+    },
+    "thunderstorms-extreme": {
+      "icon": "thunderstorms-extreme.json",
+      "label": "",
+      "phrases": [
+        "Åskan tar mycket plats. Du kan andas långsamt.",
+        "Luften är laddad till max. Du behöver inte skynda.",
+        "Allt kommer på en gång. Du får vila om du vill.",
+        "En dag med extrem intensitet. Du kan andas långsamt.",
+        "Det är okej att dra sig undan. Det räcker att du är."
+      ]
+    },
+    "thunderstorms-night-extreme-rain": {
+      "icon": "thunderstorms-night-extreme-rain.json",
+      "label": "",
+      "phrases": [
+        "Regnet slår hårt i natten. Du gör så gott du kan.",
+        "Åskan håller sig nära mörkret. Du är okej precis här.",
+        "Allt känns förstärkt efter mörkrets inbrott. Du kan andas långsamt.",
+        "En natt med hög volym. Du behöver inte skynda.",
+        "Inne får vara lugnt. Du får vila om du vill."
+      ]
+    },
+    "thunderstorms-night-extreme-snow": {
+      "icon": "thunderstorms-night-extreme-snow.json",
+      "label": "",
+      "phrases": [
+        "Snön faller hårt i mörkret. Det är helt okej att ta det lugnt.",
+        "Åskan bryter den stilla natten. Du gör så gott du kan.",
+        "En ovanligt intensiv vinternatt. Du gör så gott du kan.",
+        "Det kan kännas överväldigande där ute i natten. Du är okej precis här.",
+        "Du får vara det."
+      ]
+    },
+    "thunderstorms-night-extreme": {
+      "icon": "thunderstorms-night-extreme.json",
+      "label": "",
+      "phrases": [
+        "Åskan tar mycket plats i natten. Du får vila om du vill.",
+        "Luften är tung och laddad. Det är helt okej att ta det lugnt.",
+        "Mycket händer samtidigt i mörkret. Du är okej precis här.",
+        "En natt med hög intensitet. Det är helt okej att ta det lugnt.",
+        "Du får hålla dig stilla ändå."
+      ]
+    },
+    "thunderstorms-night-overcast-rain": {
+      "icon": "thunderstorms-night-overcast-rain.json",
+      "label": "",
+      "phrases": [
+        "Regnet slår mot ett grått mörker. Du är okej precis här.",
+        "Molnen håller kvar mullret. Du får vila om du vill.",
+        "En natt som låter blöt och tung. Du behöver inte skynda.",
+        "Allt känns tätt och pågående. Det är helt okej att ta det lugnt.",
+        "Mycket regn, men du kan hålla dig nära."
+      ]
+    },
+    "thunderstorms-night-overcast-snow": {
+      "icon": "thunderstorms-night-overcast-snow.json",
+      "label": "",
+      "phrases": [
+        "I natt faller snö under tunga åskmoln. Det är helt okej att ta det lugnt.",
+        "Mörkret fylls av ljud. Du gör så gott du kan.",
+        "En ovanlig och intensiv natt. Du behöver inte skynda.",
+        "Natten samlar allt på en gång. Du får ta det i din takt.",
+        "Du får följa med i tempot."
+      ]
+    },
+    "thunderstorms-night-overcast": {
+      "icon": "thunderstorms-night-overcast.json",
+      "label": "",
+      "phrases": [
+        "Åskan hörs under ett tätt mörkt molntäcke. Du får ta det i din takt.",
+        "Ljuset hålls tillbaka i natten. Du kan andas långsamt.",
+        "Luften känns tung av åska. Du får vila om du vill.",
+        "En natt som inte släpper taget. Du är okej precis här.",
+        "Vädret fyller hela rummet. Du gör så gott du kan."
+      ]
+    },
+    "thunderstorms-night-rain": {
+      "icon": "thunderstorms-night-rain.json",
+      "label": "",
+      "phrases": [
+        "Regn och åska delar natten. Du får ta det i din takt.",
+        "Natten låter blöt och laddad. Du är okej precis här.",
+        "Allt sker med hög volym. Du behöver inte skynda.",
+        "Natten håller åskan nära. Du får ta det i din takt.",
+        "Du får hålla tempot nere i natten."
+      ]
+    },
+    "thunderstorms-night-snow": {
+      "icon": "thunderstorms-night-snow.json",
+      "label": "",
+      "phrases": [
+        "Åskan mullrar bakom snön i natt. Du gör så gott du kan.",
+        "En natt där vintern låter mer. Det är helt okej att ta det lugnt.",
+        "Natten känns ovanligt intensiv. Det räcker att du är.",
+        "Mörkret bär både kyla och ljud. Du behöver inte skynda.",
+        "Du får vara i takt med något."
+      ]
+    },
+    "thunderstorms-night": {
+      "icon": "thunderstorms-night.json",
+      "label": "",
+      "phrases": [
+        "Åskan präglar natten just nu. Du är okej precis här.",
+        "Luften är spänd. Du får vila om du vill.",
+        "Natten rymmer flera oväder på samma gång. Du är okej precis här.",
+        "En natt med hög närvaro. Du behöver inte skynda.",
+        "Ovädret håller trycket uppe i mörkret. Du är okej precis här."
+      ]
+    },
+    "thunderstorms-overcast-rain": {
+      "icon": "thunderstorms-overcast-rain.json",
+      "label": "",
+      "phrases": [
+        "Grått ljus, tungt regn, och åska. Du behöver inte skynda.",
+        "Molnen håller kvar ovädret. Det är helt okej att ta det lugnt.",
+        "Allt känns tätt och vått. Det är helt okej att ta det lugnt.",
+        "Vädret pressar på jämnt. Du får ta det i din takt.",
+        "Du får dra dig tillbaka."
+      ]
+    },
+    "thunderstorms-overcast-snow": {
+      "icon": "thunderstorms-overcast-snow.json",
+      "label": "",
+      "phrases": [
+        "Snön faller under tunga åskmoln. Du gör så gott du kan.",
+        "En dag där vintern låter högt. Du får ta det i din takt.",
+        "Snö och åska tränger sig på samtidigt. Du gör så gott du kan.",
+        "Vädret tar över scenen. Det är helt okej att ta det lugnt.",
+        "Du får delta."
+      ]
+    },
+    "thunderstorms-overcast": {
+      "icon": "thunderstorms-overcast.json",
+      "label": "",
+      "phrases": [
+        "Molnen ligger täta runt åskan. Du kan andas långsamt.",
+        "Ljuset hålls tillbaka. Du behöver inte skynda.",
+        "Luften ligger laddad under molnen. Du är okej precis här.",
+        "Allt är inneslutet av oväder. Det är helt okej att ta det lugnt.",
+        "Vädret fyller dagen. Du gör så gott du kan."
+      ]
+    },
+    "thunderstorms-rain": {
+      "icon": "thunderstorms-rain.json",
+      "label": "",
+      "phrases": [
+        "Regnet faller med åskan nära. Du får ta det i din takt.",
+        "Luften vibrerar lätt. Det är helt okej att ta det lugnt.",
+        "En blöt dag med hög puls. Du gör så gott du kan.",
+        "Mycket ljud, mycket vatten. Du får vila om du vill.",
+        "Du kan hålla tempot nere."
+      ]
+    },
+    "thunderstorms-snow": {
+      "icon": "thunderstorms-snow.json",
+      "label": "",
+      "phrases": [
+        "Snön faller med åskan i bakgrunden. Du behöver inte skynda.",
+        "En ovanlig kombination. Du kan andas långsamt.",
+        "Allt sker samtidigt. Du kan andas långsamt.",
+        "Snön låter ovanligt hög. Du får vila om du vill.",
+        "Du får följa rytmen."
+      ]
+    },
+    "thunderstorms": {
+      "icon": "thunderstorms.json",
+      "label": "",
+      "phrases": [
+        "Åskan gör sig påmind. Du gör så gott du kan.",
+        "Luften är laddad. Du är okej precis här.",
+        "Mycket händer samtidigt. Du gör så gott du kan.",
+        "En dag med hög intensitet. Du behöver inte skynda.",
+        "Det räcker att vara här. Du är okej precis här."
+      ]
+    },
+    "tornado": {
+      "icon": "tornado.json",
+      "label": "",
+      "phrases": [
+        "Luften rör sig fel. Du får ta det i din takt.",
+        "Allt snurrar utanför. Du får ta det i din takt.",
+        "En dag att söka stillhet. Du är okej precis här.",
+        "Vädret är hotfullt men opersonligt. Du är okej precis här.",
+        "Du får stå i vägen."
+      ]
+    },
+    "wind-snow": {
+      "icon": "wind-snow.json",
+      "label": "",
+      "phrases": [
+        "Snön driver i vinden. Du får ta det i din takt.",
+        "Allt rör sig snett. Det är helt okej att ta det lugnt.",
+        "En dag där riktningen skiftar. Du är okej precis här.",
+        "Vinden tar med sig snön. Det är helt okej att ta det lugnt.",
+        "Tempot känns ojämnt. Du är okej precis här."
+      ]
+    },
+    "wind": {
+      "icon": "wind.json",
+      "label": "",
+      "phrases": [
+        "Vinden är i rörelse. Det är helt okej att ta det lugnt.",
+        "Luften vill någon annanstans. Du gör så gott du kan.",
+        "Allt känns lite osäkert men levande. Det är helt okej att ta det lugnt.",
+        "En dag som blåser igenom. Du får ta det i din takt.",
+        "Vinden gör sitt utan att fråga. Det är helt okej att ta det lugnt."
+      ]
+    }
+  }
+}
