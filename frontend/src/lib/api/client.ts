@@ -2,7 +2,7 @@ import type { MoodEntry, Tag, DailyAggregate, DailyLog, DailyReflection, GraphVi
 import { auth } from '$lib/stores/auth';
 import { get } from 'svelte/store';
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? '/api';
+const BASE_URL = 'https://moodmap-7ihf.onrender.com/api';
 
 function getAuthHeaders(): HeadersInit {
 	const state = get(auth);
