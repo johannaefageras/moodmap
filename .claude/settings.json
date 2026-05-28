@@ -23,7 +23,9 @@
       "Bash(sed -i '' '541,588d' src/routes/index.module.css)",
       "Bash(sed -n '538,545p' src/routes/index.module.css)",
       "Bash(echo \"exit:$?\")",
-      "Bash(npx biome *)"
+      "Bash(npx biome *)",
+      "Bash(git checkout *)",
+      "Bash(git stash *)"
     ]
   }
 }

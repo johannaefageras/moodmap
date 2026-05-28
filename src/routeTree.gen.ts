@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SkapaKontoRouteImport } from './routes/skapa-konto'
 import { Route as LoggaInRouteImport } from './routes/logga-in'
+import { Route as InsikterRouteImport } from './routes/insikter'
 import { Route as HistorikRouteImport } from './routes/historik'
 import { Route as GlomtLosenordRouteImport } from './routes/glomt-losenord'
 import { Route as AterstallLosenordRouteImport } from './routes/aterstall-losenord'
@@ -25,6 +26,11 @@ const SkapaKontoRoute = SkapaKontoRouteImport.update({
 const LoggaInRoute = LoggaInRouteImport.update({
   id: '/logga-in',
   path: '/logga-in',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsikterRoute = InsikterRouteImport.update({
+  id: '/insikter',
+  path: '/insikter',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HistorikRoute = HistorikRouteImport.update({
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/aterstall-losenord': typeof AterstallLosenordRoute
   '/glomt-losenord': typeof GlomtLosenordRoute
   '/historik': typeof HistorikRoute
+  '/insikter': typeof InsikterRoute
   '/logga-in': typeof LoggaInRoute
   '/skapa-konto': typeof SkapaKontoRoute
   '/auth/callback': typeof AuthCallbackRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByTo {
   '/aterstall-losenord': typeof AterstallLosenordRoute
   '/glomt-losenord': typeof GlomtLosenordRoute
   '/historik': typeof HistorikRoute
+  '/insikter': typeof InsikterRoute
   '/logga-in': typeof LoggaInRoute
   '/skapa-konto': typeof SkapaKontoRoute
   '/auth/callback': typeof AuthCallbackRoute
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/aterstall-losenord': typeof AterstallLosenordRoute
   '/glomt-losenord': typeof GlomtLosenordRoute
   '/historik': typeof HistorikRoute
+  '/insikter': typeof InsikterRoute
   '/logga-in': typeof LoggaInRoute
   '/skapa-konto': typeof SkapaKontoRoute
   '/auth/callback': typeof AuthCallbackRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/aterstall-losenord'
     | '/glomt-losenord'
     | '/historik'
+    | '/insikter'
     | '/logga-in'
     | '/skapa-konto'
     | '/auth/callback'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/aterstall-losenord'
     | '/glomt-losenord'
     | '/historik'
+    | '/insikter'
     | '/logga-in'
     | '/skapa-konto'
     | '/auth/callback'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/aterstall-losenord'
     | '/glomt-losenord'
     | '/historik'
+    | '/insikter'
     | '/logga-in'
     | '/skapa-konto'
     | '/auth/callback'
@@ -116,6 +128,7 @@ export interface RootRouteChildren {
   AterstallLosenordRoute: typeof AterstallLosenordRoute
   GlomtLosenordRoute: typeof GlomtLosenordRoute
   HistorikRoute: typeof HistorikRoute
+  InsikterRoute: typeof InsikterRoute
   LoggaInRoute: typeof LoggaInRoute
   SkapaKontoRoute: typeof SkapaKontoRoute
   AuthCallbackRoute: typeof AuthCallbackRoute
@@ -135,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/logga-in'
       fullPath: '/logga-in'
       preLoaderRoute: typeof LoggaInRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insikter': {
+      id: '/insikter'
+      path: '/insikter'
+      fullPath: '/insikter'
+      preLoaderRoute: typeof InsikterRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/historik': {
@@ -180,6 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   AterstallLosenordRoute: AterstallLosenordRoute,
   GlomtLosenordRoute: GlomtLosenordRoute,
   HistorikRoute: HistorikRoute,
+  InsikterRoute: InsikterRoute,
   LoggaInRoute: LoggaInRoute,
   SkapaKontoRoute: SkapaKontoRoute,
   AuthCallbackRoute: AuthCallbackRoute,

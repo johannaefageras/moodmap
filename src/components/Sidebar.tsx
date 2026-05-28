@@ -14,13 +14,13 @@ export type SidebarKey = 'oversikt' | 'historik' | 'insikter' | 'dagbok' | 'inst
 type NavItem = {
   key: SidebarKey
   label: string
-  to?: '/' | '/historik'
+  to?: '/' | '/historik' | '/insikter'
 }
 
 const ITEMS: NavItem[] = [
   { key: 'oversikt', label: 'Översikt', to: '/' },
   { key: 'historik', label: 'Historik', to: '/historik' },
-  { key: 'insikter', label: 'Insikter' },
+  { key: 'insikter', label: 'Insikter', to: '/insikter' },
   { key: 'dagbok', label: 'Dagbok' },
   { key: 'installningar', label: 'Inställningar' },
   { key: 'konto', label: 'Konto' },

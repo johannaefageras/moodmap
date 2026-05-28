@@ -17,6 +17,7 @@ export const SURFACE_LIMITS = {
   summary: { sentences: 4, maxTokens: 2000 },
   pattern: { sentences: 1, maxTokens: 1200 },
   reframe: { sentences: 2, maxTokens: 1500 },
+  correlations: { sentences: 3, maxTokens: 1500 },
 } as const
 
 export type Surface = keyof typeof SURFACE_LIMITS

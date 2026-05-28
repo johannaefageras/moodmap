@@ -21,7 +21,7 @@ function emojiSetFor(metric: SliderMetric): string[] {
 
 const emojiCache: Partial<Record<SliderMetric, string[]>> = {}
 
-function emojiFor(metric: SliderMetric, value: number): string {
+export function emojiFor(metric: SliderMetric, value: number): string {
   const set = (emojiCache[metric] ??= emojiSetFor(metric))
   const idx = Math.min(10, Math.max(0, Math.floor(value)))
   return set[idx]

@@ -3,6 +3,7 @@ import { createFileRoute, Link, redirect, useRouter } from '@tanstack/react-rout
 import { fetchCurrentUser } from '#/lib/auth'
 import { EntryEditModal } from '#/components/EntryEditModal'
 import { LogSliderModal } from '#/components/LogSliderModal'
+import { LogAnythingModal } from '#/components/LogAnythingModal'
 import { Sidebar } from '#/components/Sidebar'
 import modalS from '#/components/LogSliderModal.module.css'
 import {
@@ -184,6 +185,7 @@ const GREETING_PREFIX: Record<DashboardSummary['partOfDay'], string> = {
 
 function Topbar({ dashboard }: { dashboard: DashboardSummary }) {
   const firstName = dashboard.displayName.split(' ')[0]
+  const [logOpen, setLogOpen] = useState(false)
   return (
     <header className={s.topbar}>
       <div className={s.greet}>
@@ -195,8 +197,9 @@ function Topbar({ dashboard }: { dashboard: DashboardSummary }) {
       <div className={s.topActions}>
         <button className={`${s.btn} ${s.btnGhost}`}>Exportera</button>
         <Link to="/historik" className={s.btn}>Visa historik</Link>
-        <button className={`${s.btn} ${s.btnPrimary}`}>+ Ny incheckning</button>
+        <button className={`${s.btn} ${s.btnPrimary}`} onClick={() => setLogOpen(true)}>+ Ny incheckning</button>
       </div>
+      <LogAnythingModal open={logOpen} onClose={() => setLogOpen(false)} />
     </header>
   )
 }
