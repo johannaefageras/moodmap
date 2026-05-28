@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+import { daysAgoISO, todayISO, weekdayOf, zonedHour } from "./date";
 import { createSupabaseServerClient } from "./supabase/server";
 
 type EntryRow = {
@@ -20,6 +21,12 @@ type EntryRow = {
 	brushed_teeth: boolean | null;
 	dressed: boolean | null;
 	ate_meals: boolean | null;
+	medication: boolean | null;
+	screen_free: boolean | null;
+	recovery: boolean | null;
+	ate_breakfast: boolean | null;
+	ate_lunch: boolean | null;
+	ate_dinner: boolean | null;
 	social_relation: string | null;
 	social_note: string | null;
 	caffeine: number | null;
@@ -28,20 +35,6 @@ type EntryRow = {
 	drugs: number | null;
 	note: string | null;
 };
-
-function isoDate(d: Date): string {
-	return d.toISOString().slice(0, 10);
-}
-
-function todayISO(): string {
-	return isoDate(new Date());
-}
-
-function daysAgoISO(n: number): string {
-	const d = new Date();
-	d.setDate(d.getDate() - n);
-	return isoDate(d);
-}
 
 function avg(values: (number | null | undefined)[]): number | null {
 	const xs = values.filter((v): v is number => typeof v === "number");
@@ -93,7 +86,15 @@ function describeEntry(r: EntryRow): string {
 	if (r.showered) parts.push("Duschat");
 	if (r.brushed_teeth) parts.push("Borstat tänderna");
 	if (r.dressed) parts.push("Påklädd");
-	if (r.ate_meals) parts.push("Ätit");
+	if (r.medication) parts.push("Tagit medicin");
+	if (r.screen_free) parts.push("Skärmfri stund");
+	if (r.recovery) parts.push("Återhämtning");
+	const meals: string[] = [];
+	if (r.ate_breakfast) meals.push("frukost");
+	if (r.ate_lunch) meals.push("lunch");
+	if (r.ate_dinner) meals.push("middag");
+	if (meals.length > 0) parts.push(`Ätit · ${meals.join(", ")}`);
+	else if (r.ate_meals) parts.push("Ätit");
 	if (r.social_relation)
 		parts.push(
 			`Socialt · ${SOCIAL_LABEL[r.social_relation] ?? r.social_relation}`,
@@ -132,7 +133,12 @@ export type DashboardSeries = {
 	showered: boolean[];
 	brushed_teeth: boolean[];
 	dressed: boolean[];
-	ate_meals: boolean[];
+	medication: boolean[];
+	screen_free: boolean[];
+	recovery: boolean[];
+	ate_breakfast: boolean[];
+	ate_lunch: boolean[];
+	ate_dinner: boolean[];
 };
 
 export type DashboardSummary = {
@@ -160,7 +166,12 @@ export type DashboardSummary = {
 		showered: boolean;
 		brushed_teeth: boolean;
 		dressed: boolean;
-		ate_meals: boolean;
+		medication: boolean;
+		screen_free: boolean;
+		recovery: boolean;
+		ate_breakfast: boolean;
+		ate_lunch: boolean;
+		ate_dinner: boolean;
 		social: number;
 		caffeine: number;
 		alcohol: number;
@@ -217,12 +228,14 @@ const MONTH_SV = [
 	"december",
 ];
 
-function formatTodayLabel(d: Date): string {
-	return `${WEEKDAY_SV[d.getDay()]} ${d.getDate()} ${MONTH_SV[d.getMonth()]}`;
+function formatTodayLabel(now: Date): string {
+	const iso = todayISO(now);
+	const [, month, day] = iso.split("-").map(Number);
+	return `${WEEKDAY_SV[weekdayOf(iso)]} ${day} ${MONTH_SV[month - 1]}`;
 }
 
-function partOfDay(d: Date): "morgon" | "dag" | "kväll" | "natt" {
-	const h = d.getHours();
+function partOfDay(now: Date): "morgon" | "dag" | "kväll" | "natt" {
+	const h = zonedHour(now);
 	if (h < 5) return "natt";
 	if (h < 11) return "morgon";
 	if (h < 17) return "dag";
@@ -245,7 +258,7 @@ export const getDashboardSummary = createServerFn({ method: "GET" }).handler(
 		const { data: rows, error } = await supabase
 			.from("entries")
 			.select(
-				"id, created_at, logged_for, mood, energy, concentration, anxiety, stress, sleep_hours, sleep_quality, water_glasses, exercise_min, daylight_min, showered, brushed_teeth, dressed, ate_meals, social_relation, social_note, caffeine, alcohol, nicotine, drugs, note",
+				"id, created_at, logged_for, mood, energy, concentration, anxiety, stress, sleep_hours, sleep_quality, water_glasses, exercise_min, daylight_min, showered, brushed_teeth, dressed, ate_meals, medication, screen_free, recovery, ate_breakfast, ate_lunch, ate_dinner, social_relation, social_note, caffeine, alcohol, nicotine, drugs, note",
 			)
 			.eq("user_id", user.id)
 			.gte("logged_for", start30)
@@ -309,7 +322,12 @@ export const getDashboardSummary = createServerFn({ method: "GET" }).handler(
 			showered: seriesBool("showered"),
 			brushed_teeth: seriesBool("brushed_teeth"),
 			dressed: seriesBool("dressed"),
-			ate_meals: seriesBool("ate_meals"),
+			medication: seriesBool("medication"),
+			screen_free: seriesBool("screen_free"),
+			recovery: seriesBool("recovery"),
+			ate_breakfast: seriesBool("ate_breakfast"),
+			ate_lunch: seriesBool("ate_lunch"),
+			ate_dinner: seriesBool("ate_dinner"),
 		};
 
 		const distinctDays30 = new Set(all.map((r) => r.logged_for)).size;
@@ -351,7 +369,12 @@ export const getDashboardSummary = createServerFn({ method: "GET" }).handler(
 				showered: todays.some((r) => r.showered === true),
 				brushed_teeth: todays.some((r) => r.brushed_teeth === true),
 				dressed: todays.some((r) => r.dressed === true),
-				ate_meals: todays.some((r) => r.ate_meals === true),
+				medication: todays.some((r) => r.medication === true),
+				screen_free: todays.some((r) => r.screen_free === true),
+				recovery: todays.some((r) => r.recovery === true),
+				ate_breakfast: todays.some((r) => r.ate_breakfast === true),
+				ate_lunch: todays.some((r) => r.ate_lunch === true),
+				ate_dinner: todays.some((r) => r.ate_dinner === true),
 				social: todays.filter((r) => r.social_relation !== null).length,
 				caffeine: sum(todays.map((r) => r.caffeine)),
 				alcohol: sum(todays.map((r) => r.alcohol)),

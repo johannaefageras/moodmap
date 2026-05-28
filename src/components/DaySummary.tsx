@@ -16,6 +16,12 @@ const SELF_CARE = [
   { key: 'showered', label: 'Duschat' },
   { key: 'brushed_teeth', label: 'Tandborstat' },
   { key: 'dressed', label: 'Klätt på' },
+  { key: 'medication', label: 'Tagit medicin' },
+  { key: 'screen_free', label: 'Skärmfri stund' },
+  { key: 'recovery', label: 'Återhämtning' },
+  { key: 'ate_breakfast', label: 'Frukost' },
+  { key: 'ate_lunch', label: 'Lunch' },
+  { key: 'ate_dinner', label: 'Middag' },
   { key: 'ate_meals', label: 'Ätit' },
 ] as const
 

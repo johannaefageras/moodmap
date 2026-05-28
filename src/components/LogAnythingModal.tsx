@@ -6,7 +6,14 @@ import { emojiFor, type SliderMetric } from "./LogSliderModal";
 import s from "./LogSliderModal.module.css";
 
 type PhysicalKind = "water" | "exercise" | "daylight";
-type SelfCareKind = "showered" | "brushed_teeth" | "dressed" | "ate_meals";
+type SelfCareKind =
+	| "showered"
+	| "brushed_teeth"
+	| "dressed"
+	| "medication"
+	| "screen_free"
+	| "recovery";
+type MealKind = "ate_breakfast" | "ate_lunch" | "ate_dinner";
 type SubstanceKind = "caffeine" | "alcohol" | "nicotine" | "drugs";
 
 const SLIDERS: { metric: SliderMetric; label: string }[] = [
@@ -28,7 +35,15 @@ const SELFCARE: { kind: SelfCareKind; label: string }[] = [
 	{ kind: "showered", label: "Duschat" },
 	{ kind: "brushed_teeth", label: "Borstat tänderna" },
 	{ kind: "dressed", label: "Klätt på mig" },
-	{ kind: "ate_meals", label: "Ätit måltider" },
+	{ kind: "medication", label: "Tagit min medicin" },
+	{ kind: "screen_free", label: "Skärmfri stund" },
+	{ kind: "recovery", label: "Tid för återhämtning" },
+];
+
+const MEALS: { kind: MealKind; label: string }[] = [
+	{ kind: "ate_breakfast", label: "Frukost" },
+	{ kind: "ate_lunch", label: "Lunch" },
+	{ kind: "ate_dinner", label: "Middag" },
 ];
 
 const SUBSTANCES: { kind: SubstanceKind; label: string }[] = [
@@ -43,7 +58,15 @@ const emptySelfCare = () => ({
 	showered: false,
 	brushed_teeth: false,
 	dressed: false,
-	ate_meals: false,
+	medication: false,
+	screen_free: false,
+	recovery: false,
+});
+
+const emptyMeals = () => ({
+	ate_breakfast: false,
+	ate_lunch: false,
+	ate_dinner: false,
 });
 const emptySubstances = () => ({
 	caffeine: 0,
@@ -80,6 +103,7 @@ export function LogAnythingModal({
 	const [sleepHoursTouched, setSleepHoursTouched] = useState(false);
 	const [numbers, setNumbers] = useState(emptyNumbers());
 	const [selfCare, setSelfCare] = useState(emptySelfCare());
+	const [meals, setMeals] = useState(emptyMeals());
 	const [socialNote, setSocialNote] = useState("");
 	const [substances, setSubstances] = useState(emptySubstances());
 	const [note, setNote] = useState("");
@@ -108,6 +132,7 @@ export function LogAnythingModal({
 		setSleepHoursTouched(false);
 		setNumbers(emptyNumbers());
 		setSelfCare(emptySelfCare());
+		setMeals(emptyMeals());
 		setSocialNote("");
 		setSubstances(emptySubstances());
 		setNote("");
@@ -140,6 +165,7 @@ export function LogAnythingModal({
 		numOf(numbers.exercise) > 0 ||
 		numOf(numbers.daylight) > 0 ||
 		Object.values(selfCare).some(Boolean) ||
+		Object.values(meals).some(Boolean) ||
 		socialNote.trim().length > 0 ||
 		Object.values(substances).some((n) => n > 0) ||
 		note.trim().length > 0;
@@ -167,7 +193,12 @@ export function LogAnythingModal({
 					showered: selfCare.showered || undefined,
 					brushedTeeth: selfCare.brushed_teeth || undefined,
 					dressed: selfCare.dressed || undefined,
-					ateMeals: selfCare.ate_meals || undefined,
+					medication: selfCare.medication || undefined,
+					screenFree: selfCare.screen_free || undefined,
+					recovery: selfCare.recovery || undefined,
+					ateBreakfast: meals.ate_breakfast || undefined,
+					ateLunch: meals.ate_lunch || undefined,
+					ateDinner: meals.ate_dinner || undefined,
 					socialNote: socialNote.trim() || undefined,
 					caffeine: substances.caffeine || undefined,
 					alcohol: substances.alcohol || undefined,
@@ -286,6 +317,20 @@ export function LogAnythingModal({
 										/>
 										<span className={f.numUnit}>{unit}</span>
 									</span>
+								</label>
+							))}
+						</div>
+						<div className={f.row}>
+							{MEALS.map(({ kind, label }) => (
+								<label key={kind} className={f.check}>
+									<input
+										type="checkbox"
+										checked={meals[kind]}
+										onChange={(e) =>
+											setMeals((c) => ({ ...c, [kind]: e.target.checked }))
+										}
+									/>
+									<span>{label}</span>
 								</label>
 							))}
 						</div>

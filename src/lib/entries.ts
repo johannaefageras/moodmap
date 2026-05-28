@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+import { todayISO } from "./date";
 import { createSupabaseServerClient } from "./supabase/server";
 
 const sliderMetric = z.enum([
@@ -32,6 +33,7 @@ export const createSliderEntry = createServerFn({ method: "POST" })
 			.from("entries")
 			.insert({
 				user_id: user.id,
+				logged_for: todayISO(),
 				[data.metric]: rounded,
 				note: data.note && data.note.length > 0 ? data.note : null,
 			})
@@ -80,6 +82,7 @@ export const createPhysicalEntry = createServerFn({ method: "POST" })
 			.from("entries")
 			.insert({
 				user_id: user.id,
+				logged_for: todayISO(),
 				[column]: data.amount,
 			})
 			.select(`id, created_at, logged_for, ${column}`)
@@ -94,6 +97,12 @@ const selfCareKind = z.enum([
 	"brushed_teeth",
 	"dressed",
 	"ate_meals",
+	"medication",
+	"screen_free",
+	"recovery",
+	"ate_breakfast",
+	"ate_lunch",
+	"ate_dinner",
 ]);
 
 const markSelfCareInput = z.object({
@@ -114,6 +123,7 @@ export const markSelfCare = createServerFn({ method: "POST" })
 			.from("entries")
 			.insert({
 				user_id: user.id,
+				logged_for: todayISO(),
 				[data.kind]: true,
 			})
 			.select(`id, created_at, logged_for, ${data.kind}`)
@@ -153,6 +163,7 @@ export const logSocialInteraction = createServerFn({ method: "POST" })
 			.from("entries")
 			.insert({
 				user_id: user.id,
+				logged_for: todayISO(),
 				social_relation: data.relation,
 			})
 			.select("id, created_at, logged_for, social_relation")
@@ -182,6 +193,7 @@ export const logSubstance = createServerFn({ method: "POST" })
 			.from("entries")
 			.insert({
 				user_id: user.id,
+				logged_for: todayISO(),
 				[data.kind]: 1,
 			})
 			.select(`id, created_at, logged_for, ${data.kind}`)
@@ -201,7 +213,7 @@ export const undoSubstance = createServerFn({ method: "POST" })
 		} = await supabase.auth.getUser();
 		if (userError || !user) throw new Error("Inte inloggad");
 
-		const today = new Date().toISOString().slice(0, 10);
+		const today = todayISO();
 
 		const { data: latest, error: selectError } = await supabase
 			.from("entries")
@@ -264,7 +276,7 @@ export const listEntries = createServerFn({ method: "POST" })
 		let query = supabase
 			.from("entries")
 			.select(
-				"id, created_at, logged_for, mood, energy, concentration, anxiety, stress, sleep_hours, sleep_quality, water_glasses, exercise_min, daylight_min, showered, brushed_teeth, dressed, ate_meals, social_relation, caffeine, alcohol, nicotine, drugs, note",
+				"id, created_at, logged_for, mood, energy, concentration, anxiety, stress, sleep_hours, sleep_quality, water_glasses, exercise_min, daylight_min, showered, brushed_teeth, dressed, ate_meals, medication, screen_free, recovery, ate_breakfast, ate_lunch, ate_dinner, social_relation, caffeine, alcohol, nicotine, drugs, note",
 			)
 			.eq("user_id", user.id);
 
@@ -313,7 +325,7 @@ export const listEntriesInRange = createServerFn({ method: "POST" })
 		let query = supabase
 			.from("entries")
 			.select(
-				"id, created_at, logged_for, mood, energy, concentration, anxiety, stress, sleep_hours, sleep_quality, water_glasses, exercise_min, daylight_min, showered, brushed_teeth, dressed, ate_meals, social_relation, caffeine, alcohol, nicotine, drugs, note",
+				"id, created_at, logged_for, mood, energy, concentration, anxiety, stress, sleep_hours, sleep_quality, water_glasses, exercise_min, daylight_min, showered, brushed_teeth, dressed, ate_meals, medication, screen_free, recovery, ate_breakfast, ate_lunch, ate_dinner, social_relation, caffeine, alcohol, nicotine, drugs, note",
 			)
 			.eq("user_id", user.id)
 			.gte("logged_for", data.from)
@@ -352,7 +364,7 @@ export const getEntry = createServerFn({ method: "POST" })
 		const { data: entry, error } = await supabase
 			.from("entries")
 			.select(
-				"id, created_at, logged_for, mood, energy, concentration, anxiety, stress, sleep_hours, sleep_quality, water_glasses, exercise_min, daylight_min, showered, brushed_teeth, dressed, ate_meals, social_relation, caffeine, alcohol, nicotine, drugs, note",
+				"id, created_at, logged_for, mood, energy, concentration, anxiety, stress, sleep_hours, sleep_quality, water_glasses, exercise_min, daylight_min, showered, brushed_teeth, dressed, ate_meals, medication, screen_free, recovery, ate_breakfast, ate_lunch, ate_dinner, social_relation, caffeine, alcohol, nicotine, drugs, note",
 			)
 			.eq("user_id", user.id)
 			.eq("id", data.id)
@@ -423,7 +435,12 @@ const createCheckInInput = z.object({
 	showered: z.boolean().optional(),
 	brushedTeeth: z.boolean().optional(),
 	dressed: z.boolean().optional(),
-	ateMeals: z.boolean().optional(),
+	medication: z.boolean().optional(),
+	screenFree: z.boolean().optional(),
+	recovery: z.boolean().optional(),
+	ateBreakfast: z.boolean().optional(),
+	ateLunch: z.boolean().optional(),
+	ateDinner: z.boolean().optional(),
 	socialNote: z.string().trim().max(280).optional(),
 	caffeine: z.number().int().positive().max(50).optional(),
 	alcohol: z.number().int().positive().max(50).optional(),
@@ -461,7 +478,12 @@ export const createCheckIn = createServerFn({ method: "POST" })
 		if (data.showered) row.showered = true;
 		if (data.brushedTeeth) row.brushed_teeth = true;
 		if (data.dressed) row.dressed = true;
-		if (data.ateMeals) row.ate_meals = true;
+		if (data.medication) row.medication = true;
+		if (data.screenFree) row.screen_free = true;
+		if (data.recovery) row.recovery = true;
+		if (data.ateBreakfast) row.ate_breakfast = true;
+		if (data.ateLunch) row.ate_lunch = true;
+		if (data.ateDinner) row.ate_dinner = true;
 		if (data.socialNote && data.socialNote.length > 0)
 			row.social_note = data.socialNote;
 		if (data.caffeine !== undefined) row.caffeine = data.caffeine;
@@ -471,6 +493,7 @@ export const createCheckIn = createServerFn({ method: "POST" })
 		if (data.note && data.note.length > 0) row.note = data.note;
 
 		if (Object.keys(row).length <= 1) throw new Error("Inget att spara");
+		row.logged_for = todayISO();
 
 		const { data: entry, error } = await supabase
 			.from("entries")
@@ -502,6 +525,7 @@ export const createSleepEntry = createServerFn({ method: "POST" })
 			.from("entries")
 			.insert({
 				user_id: user.id,
+				logged_for: todayISO(),
 				sleep_quality: Number(data.quality.toFixed(2)),
 				sleep_hours: Number(data.hours.toFixed(1)),
 				note: data.note && data.note.length > 0 ? data.note : null,

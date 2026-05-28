@@ -25,7 +25,10 @@
       "Bash(echo \"exit:$?\")",
       "Bash(npx biome *)",
       "Bash(git checkout *)",
-      "Bash(git stash *)"
+      "Bash(git stash *)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(perl -0pi -e 's/showered, brushed_teeth, dressed, ate_meals,/showered, brushed_teeth, dressed, ate_meals, medication, screen_free, recovery, ate_breakfast, ate_lunch, ate_dinner,/g' src/lib/entries.ts src/lib/dashboard.ts src/lib/ai/summary.ts)",
+      "Bash(python3 -)"
     ]
   }
 }

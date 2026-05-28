@@ -13,6 +13,7 @@ export const METRIC_COLORS = {
   drugs: 'var(--metric-drugs)',
   nicotine: 'var(--metric-nicotine)',
   caffeine: 'var(--metric-caffeine)',
+  meals: 'var(--metric-meals)',
 } as const
 
 export type MetricKey = keyof typeof METRIC_COLORS

@@ -1,5 +1,6 @@
 import { createServerFn } from '@tanstack/react-start'
 import { z } from 'zod'
+import { lastNDays } from '#/lib/date'
 import { createSupabaseServerClient } from '#/lib/supabase/server'
 import { complete, currentModel } from './client'
 import { hashInput, readByHash, readLatest, writeOutput } from './cache'
@@ -54,10 +55,6 @@ type EntryRow = {
   nicotine: number | null
   drugs: number | null
   note: string | null
-}
-
-function isoDate(d: Date): string {
-  return d.toISOString().slice(0, 10)
 }
 
 function emptyDay(date: string): DaySummary {
@@ -130,16 +127,6 @@ function aggregate(rows: EntryRow[], days: string[]): DaySummary[] {
   })
 }
 
-function lastSevenDays(today = new Date()): string[] {
-  const out: string[] = []
-  for (let i = 6; i >= 0; i--) {
-    const d = new Date(today)
-    d.setDate(d.getDate() - i)
-    out.push(isoDate(d))
-  }
-  return out
-}
-
 function buildUserPrompt(days: DaySummary[]): string {
   return [
     'Här är de senaste 7 dagarna som användaren har loggat. Tomma fält = inget loggat den dagen.',
@@ -183,14 +170,14 @@ export const getWeeklySummary = createServerFn({ method: 'POST' })
       }
     }
 
-    const days = lastSevenDays()
+    const days = lastNDays(7)
     const rangeStart = days[0]
     const rangeEnd = days[days.length - 1]
 
     const { data: rows, error } = await supabase
       .from('entries')
       .select(
-        'logged_for, mood, energy, anxiety, stress, concentration, sleep_hours, sleep_quality, water_glasses, exercise_min, daylight_min, showered, brushed_teeth, dressed, ate_meals, social_relation, caffeine, alcohol, nicotine, drugs, note',
+        'logged_for, mood, energy, anxiety, stress, concentration, sleep_hours, sleep_quality, water_glasses, exercise_min, daylight_min, showered, brushed_teeth, dressed, ate_meals, medication, screen_free, recovery, ate_breakfast, ate_lunch, ate_dinner, social_relation, caffeine, alcohol, nicotine, drugs, note',
       )
       .eq('user_id', user.id)
       .gte('logged_for', rangeStart)

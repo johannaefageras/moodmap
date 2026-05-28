@@ -757,6 +757,15 @@
   border-color: var(--ink);
   color: var(--ink);
 }
+.chipActive {
+  background: var(--chip);
+  border-color: var(--ink);
+  color: var(--ink);
+  cursor: default;
+}
+.chipActive:hover {
+  background: var(--chip);
+}
 
 /* responsive */
 @media (max-width: 1024px) {
@@ -772,6 +781,18 @@
   .rightCol > * { flex: 1 1 280px; }
   .metricGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .main { padding: 28px 28px 56px; }
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .topActions {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
 }
 @media (max-width: 720px) {
   .app { grid-template-columns: 1fr; }

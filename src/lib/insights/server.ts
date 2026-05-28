@@ -1,5 +1,6 @@
 import { createServerFn } from '@tanstack/react-start'
 import { z } from 'zod'
+import { lastNDays } from '#/lib/date'
 import { createSupabaseServerClient } from '#/lib/supabase/server'
 import { complete, currentModel } from '#/lib/ai/client'
 import { hashInput, readByHash, readLatest, writeOutput } from '#/lib/ai/cache'
@@ -34,24 +35,10 @@ type EntryRow = {
   alcohol: number | null
 }
 
-function isoDate(d: Date): string {
-  return d.toISOString().slice(0, 10)
-}
-
 function avg(values: (number | null | undefined)[]): number | null {
   const xs = values.filter((v): v is number => typeof v === 'number')
   if (xs.length === 0) return null
   return Number((xs.reduce((a, b) => a + b, 0) / xs.length).toFixed(2))
-}
-
-function windowDays(count: number, today = new Date()): string[] {
-  const out: string[] = []
-  for (let i = count - 1; i >= 0; i--) {
-    const d = new Date(today)
-    d.setDate(d.getDate() - i)
-    out.push(isoDate(d))
-  }
-  return out
 }
 
 // Days with zero entries → all fields null (so missing days are skipped pairwise).
@@ -180,7 +167,7 @@ export const getCorrelations = createServerFn({ method: 'POST' })
       }
     }
 
-    const days = windowDays(WINDOW_DAYS)
+    const days = lastNDays(WINDOW_DAYS)
     const rangeStart = days[0]
     const rangeEnd = days[days.length - 1]
 

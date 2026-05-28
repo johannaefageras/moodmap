@@ -7,7 +7,8 @@
   background: var(--bg);
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
 }
 
 .brand {

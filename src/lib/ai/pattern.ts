@@ -1,5 +1,6 @@
 import { createServerFn } from '@tanstack/react-start'
 import { z } from 'zod'
+import { lastNDays } from '#/lib/date'
 import { createSupabaseServerClient } from '#/lib/supabase/server'
 import { complete, currentModel } from './client'
 import { hashInput, readByHash, readLatest, writeOutput } from './cache'
@@ -45,24 +46,10 @@ type EntryRow = {
   note: string | null
 }
 
-function isoDate(d: Date): string {
-  return d.toISOString().slice(0, 10)
-}
-
 function avg(values: (number | null | undefined)[]): number | null {
   const xs = values.filter((v): v is number => typeof v === 'number')
   if (xs.length === 0) return null
   return Number((xs.reduce((a, b) => a + b, 0) / xs.length).toFixed(1))
-}
-
-function thirtyDays(today = new Date()): string[] {
-  const out: string[] = []
-  for (let i = 29; i >= 0; i--) {
-    const d = new Date(today)
-    d.setDate(d.getDate() - i)
-    out.push(isoDate(d))
-  }
-  return out
 }
 
 function aggregate(rows: EntryRow[], days: string[]): DayAggregate[] {
@@ -139,7 +126,7 @@ export const getPatternObservation = createServerFn({ method: 'POST' })
       }
     }
 
-    const days = thirtyDays()
+    const days = lastNDays(30)
     const rangeStart = days[0]
     const rangeEnd = days[days.length - 1]
 

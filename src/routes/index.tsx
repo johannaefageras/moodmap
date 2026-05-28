@@ -21,7 +21,14 @@ import { getChartSeries, getDashboardSummary, type ChartSeries, type DashboardSu
 import { METRIC_COLORS } from '#/lib/colors'
 
 type PhysicalKind = 'water' | 'exercise' | 'daylight'
-type SelfCareKind = 'showered' | 'brushed_teeth' | 'dressed' | 'ate_meals'
+type SelfCareKind =
+  | 'showered'
+  | 'brushed_teeth'
+  | 'dressed'
+  | 'medication'
+  | 'screen_free'
+  | 'recovery'
+type MealKind = 'ate_breakfast' | 'ate_lunch' | 'ate_dinner'
 type SocialRelation =
   | 'family'
   | 'friend'
@@ -93,6 +100,18 @@ function Dashboard() {
           <WaterCard today={dashboard.today.water} avg7d={dashboard.avg7d.waterPerDay} data={dashboard.series30d.water} />
           <ExerciseCard today={dashboard.today.exercise} avg7d={dashboard.avg7d.exercisePerDay} data={dashboard.series30d.exercise} />
           <SunlightCard today={dashboard.today.daylight} avg7d={dashboard.avg7d.daylightPerDay} data={dashboard.series30d.daylight} />
+          <MealsCard
+            today={{
+              ate_breakfast: dashboard.today.ate_breakfast,
+              ate_lunch: dashboard.today.ate_lunch,
+              ate_dinner: dashboard.today.ate_dinner,
+            }}
+            data={{
+              ate_breakfast: dashboard.series30d.ate_breakfast,
+              ate_lunch: dashboard.series30d.ate_lunch,
+              ate_dinner: dashboard.series30d.ate_dinner,
+            }}
+          />
         </div>
 
         <Divider />
@@ -102,7 +121,9 @@ function Dashboard() {
           <ToggleCard kind="showered" label="Duschat" doneTodayInitial={dashboard.today.showered} data={dashboard.series30d.showered} />
           <ToggleCard kind="brushed_teeth" label="Borstat tänderna" doneTodayInitial={dashboard.today.brushed_teeth} data={dashboard.series30d.brushed_teeth} />
           <ToggleCard kind="dressed" label="Klätt på mig" doneTodayInitial={dashboard.today.dressed} data={dashboard.series30d.dressed} />
-          <ToggleCard kind="ate_meals" label="Ätit måltider" doneTodayInitial={dashboard.today.ate_meals} data={dashboard.series30d.ate_meals} />
+          <ToggleCard kind="medication" label="Tagit min medicin" doneTodayInitial={dashboard.today.medication} data={dashboard.series30d.medication} />
+          <ToggleCard kind="screen_free" label="Skärmfri stund" doneTodayInitial={dashboard.today.screen_free} data={dashboard.series30d.screen_free} />
+          <ToggleCard kind="recovery" label="Tid för återhämtning" doneTodayInitial={dashboard.today.recovery} data={dashboard.series30d.recovery} />
         </div>
 
         <Divider />
@@ -953,6 +974,87 @@ function ToggleCard({
         >
           {doneToday ? '✓ Klart' : 'Markera klar'}
         </button>
+      </div>
+    </div>
+  )
+}
+
+/* ============================================================
+   Meals card (per-meal toggles)
+   ============================================================ */
+function MealsCard({
+  today,
+  data,
+}: {
+  today: Record<MealKind, boolean>
+  data: Record<MealKind, boolean[]>
+}) {
+  const router = useRouter()
+  const [done, setDone] = useState(today)
+  const [saving, setSaving] = useState<MealKind | null>(null)
+  useEffect(() => {
+    setDone(today)
+  }, [today])
+
+  const meals: { kind: MealKind; label: string }[] = [
+    { kind: 'ate_breakfast', label: 'Frukost' },
+    { kind: 'ate_lunch', label: 'Lunch' },
+    { kind: 'ate_dinner', label: 'Middag' },
+  ]
+  const doneCount = meals.filter((m) => done[m.kind]).length
+  const perDay = data.ate_breakfast.map(
+    (_, i) =>
+      Number(data.ate_breakfast[i]) +
+      Number(data.ate_lunch[i]) +
+      Number(data.ate_dinner[i]),
+  )
+  const series =
+    perDay.length > 0 ? [...perDay.slice(0, -1), doneCount] : perDay
+  const last7 = series.slice(-7)
+  const avg7d = last7.length > 0 ? last7.reduce((a, b) => a + b, 0) / last7.length : 0
+  const goal = avg7d > 0 ? `Snitt 7d · ${formatSv(avg7d, 1)} av 3` : 'Mål: 3 mål/dag'
+
+  async function mark(kind: MealKind) {
+    if (done[kind] || saving) return
+    setSaving(kind)
+    setDone((d) => ({ ...d, [kind]: true }))
+    try {
+      await markSelfCare({ data: { kind } })
+      await router.invalidate()
+    } catch {
+      setDone((d) => ({ ...d, [kind]: false }))
+    } finally {
+      setSaving(null)
+    }
+  }
+
+  return (
+    <div className={s.metricCard}>
+      <div className={s.metricHead}>
+        <h3>
+          <span className={s.metricDot} style={{ background: METRIC_COLORS.meals }} />
+          Måltider
+        </h3>
+        <span className={s.metricToday}>
+          {doneCount}<span className={s.metricUnit}>/3 idag</span>
+        </span>
+      </div>
+      <Sparkline data={series} color={METRIC_COLORS.meals} max={3} />
+      <div className={s.metricFoot}>
+        <span className={s.metricAvg}>{goal}</span>
+      </div>
+      <div className={s.quickChips}>
+        {meals.map((m) => (
+          <button
+            key={m.kind}
+            type="button"
+            className={`${s.chip} ${done[m.kind] ? s.chipActive : ''}`}
+            disabled={done[m.kind] || saving !== null}
+            onClick={() => mark(m.kind)}
+          >
+            {done[m.kind] ? '✓ ' : '+ '}{m.label}
+          </button>
+        ))}
       </div>
     </div>
   )

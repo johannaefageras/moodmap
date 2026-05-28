@@ -14,7 +14,7 @@ export type SidebarKey = 'oversikt' | 'historik' | 'insikter' | 'dagbok' | 'inst
 type NavItem = {
   key: SidebarKey
   label: string
-  to?: '/' | '/historik' | '/insikter'
+  to?: '/' | '/historik' | '/insikter' | '/konto'
 }
 
 const ITEMS: NavItem[] = [
@@ -23,7 +23,7 @@ const ITEMS: NavItem[] = [
   { key: 'insikter', label: 'Insikter', to: '/insikter' },
   { key: 'dagbok', label: 'Dagbok' },
   { key: 'installningar', label: 'Inställningar' },
-  { key: 'konto', label: 'Konto' },
+  { key: 'konto', label: 'Konto', to: '/konto' },
 ]
 
 export function Sidebar({ user, active }: { user: SidebarUser; active: SidebarKey }) {
