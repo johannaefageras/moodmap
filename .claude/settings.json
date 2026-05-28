@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm view *)",
+      "Bash(npm -v)",
+      "Bash(npx --yes create-tsrouter-app@latest --help)",
+      "Bash(npx --yes @tanstack/cli create --help)",
+      "Bash(npx --yes @tanstack/cli create --list-add-ons)",
+      "Bash(rm -rf /tmp/moodmap-scaffold)",
+      "Bash(npx --yes @tanstack/cli create moodmap-scaffold --target-dir /tmp --framework react --package-manager npm --add-ons tanstack-query,form,t3env --toolchain biome --no-examples --no-git --no-intent --non-interactive)",
+      "Bash(rm -rf moodmap-scaffold)",
+      "Bash(npx --yes @tanstack/cli create moodmap-scaffold --framework react --package-manager npm --add-ons tanstack-query,form,t3env --toolchain biome --no-examples --no-git --no-intent --non-interactive)",
+      "Bash(grep -q \"^\\\\.env$\" .gitignore)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /tmp/moodmap-resp.html -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(python3 -c \"import json,sys; p=json.load\\(sys.stdin\\); print\\('\\\\n'.join\\(p['exports'].keys\\(\\)\\)\\)\")",
+      "Bash(curl -s -o /tmp/r.html -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(npx tsc *)",
+      "Bash(sed -i '' \"s/exercise_min, outdoors_min, daylight_min/exercise_min, daylight_min/g\" /Users/johfa/moodmap/src/lib/entries.ts /Users/johfa/moodmap/src/lib/dashboard.ts /Users/johfa/moodmap/src/lib/ai/summary.ts)",
+      "Bash(sed -i '' \"s/exercise_min, outdoors_min, daylight_min/exercise_min, daylight_min/g\" /Users/johfa/moodmap/src/lib/ai/pattern.ts)",
+      "Bash(sed -i '' '1156,1325d' src/routes/index.tsx)",
+      "Bash(sed -n '1153,1160p' src/routes/index.tsx)",
+      "Bash(sed -i '' '541,588d' src/routes/index.module.css)",
+      "Bash(sed -n '538,545p' src/routes/index.module.css)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(npx biome *)"
+    ]
+  }
+}

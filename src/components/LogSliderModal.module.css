@@ -1,0 +1,454 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.32);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  z-index: 100;
+  animation: fade 0.12s ease-out;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 28px 22px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 8px 28px rgba(17, 17, 17, 0.08);
+}
+
+.title {
+  margin: 0 0 18px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.emojiWrap {
+  display: grid;
+  place-items: center;
+  height: 96px;
+  margin-bottom: 18px;
+}
+
+.emoji {
+  width: 80px;
+  height: 80px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* slider */
+.sliderWrap {
+  position: relative;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--chip);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.track::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--fill, 50%);
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+.range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  height: 24px;
+}
+
+.range:focus {
+  outline: none;
+}
+
+.range::-webkit-slider-runnable-track {
+  height: 6px;
+  background: transparent;
+}
+
+.range::-moz-range-track {
+  height: 6px;
+  background: transparent;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(17, 17, 17, 0.12);
+  cursor: grab;
+  margin-top: -7px;
+  transition: transform 0.08s ease;
+}
+
+.range::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.08);
+}
+
+.range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--accent);
+  box-shadow: 0 1px 3px rgba(17, 17, 17, 0.12);
+  cursor: grab;
+}
+
+/* scale labels */
+.scale {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.scaleValue {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* note */
+.noteField {
+  display: block;
+  position: relative;
+  margin-top: 22px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px 22px;
+  transition: border-color 0.12s, box-shadow 0.12s, background 0.12s;
+}
+
+.noteField:hover {
+  border-color: var(--line-2);
+}
+
+.noteField:focus-within {
+  background: var(--surface);
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.noteLabel {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.noteHint {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--muted-2);
+  margin-left: 4px;
+}
+
+.note {
+  width: 100%;
+  padding: 0;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  resize: none;
+  min-height: 44px;
+  display: block;
+}
+
+.note::placeholder {
+  color: var(--muted-2);
+}
+
+.note:focus {
+  outline: none;
+}
+
+.noteCount {
+  position: absolute;
+  right: 10px;
+  bottom: 6px;
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted-2);
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+
+/* hours stepper (sleep) */
+.hoursRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.hoursLabel {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+.hoursControl {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  overflow: hidden;
+  transition: border-color 0.12s, box-shadow 0.12s;
+}
+
+.hoursControl:focus-within {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.hoursBtn {
+  width: 34px;
+  background: transparent;
+  border: none;
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+
+.hoursBtn:hover:not(:disabled) {
+  background: var(--chip);
+}
+
+.hoursBtn:disabled {
+  color: var(--muted-2);
+  cursor: not-allowed;
+}
+
+.hoursInput {
+  width: 56px;
+  padding: 8px 4px;
+  text-align: center;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.hoursInput::-webkit-outer-spin-button,
+.hoursInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.hoursInput:focus {
+  outline: none;
+}
+
+.error {
+  margin: 14px 0 0;
+  font-size: 12.5px;
+  color: var(--accent-hover);
+}
+
+/* actions */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.btn {
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-2);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+.btn:hover {
+  border-color: var(--ink);
+}
+
+.btnGhost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--muted);
+}
+
+.btnGhost:hover {
+  color: var(--ink);
+  background: var(--chip);
+  border-color: transparent;
+}
+
+.btnPrimary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+.btnPrimary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btnDanger {
+  background: transparent;
+  border-color: transparent;
+  color: var(--accent-hover);
+  margin-right: auto;
+}
+
+.btnDanger:hover {
+  background: var(--accent-soft);
+  border-color: transparent;
+  color: var(--accent-hover);
+}
+
+.summary {
+  margin: 4px 0 18px;
+  padding: 12px 14px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.summary span b {
+  color: var(--ink);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.summaryEmpty {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.deletePrompt {
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+  font-size: 13px;
+}
+
+.savedNote {
+  margin: 4px 0 18px;
+  padding: 12px 14px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--ink-2);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.reframe {
+  margin: 0 0 4px;
+  padding: 14px 16px;
+  background: var(--accent-soft);
+  border-radius: 10px;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.reframeLink {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 12px 14px;
+  background: transparent;
+  border: 1px dashed var(--accent);
+  border-radius: 10px;
+  color: var(--accent-hover);
+  font: inherit;
+  font-size: 13.5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.reframeLink:hover:not(:disabled) {
+  background: var(--accent-soft);
+}
+
+.reframeLink:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+@media (max-width: 420px) {
+  .backdrop { padding: 12px; }
+  .modal { padding: 22px 18px 18px; }
+  .title { font-size: 18px; margin-bottom: 14px; }
+}

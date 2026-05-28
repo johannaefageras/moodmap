@@ -1,0 +1,202 @@
+.modal {
+  max-width: 480px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 16px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.section {
+  margin: 0;
+}
+
+.sectionHead {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.rowList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.rowList li + li {
+  border-top: 1px dashed var(--line);
+}
+
+.summaryRow {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.summaryRow:hover {
+  background: var(--chip);
+}
+
+.rowLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.rowValue {
+  font-size: 13px;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.chev {
+  display: inline-block;
+  width: 14px;
+  text-align: center;
+  color: var(--muted-2);
+  font-size: 16px;
+  line-height: 1;
+  transition: transform 0.12s;
+  transform: rotate(90deg);
+}
+
+.chevOpen {
+  transform: rotate(270deg);
+}
+
+.detailList {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 4px;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+
+.detailRow {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50px auto 1fr;
+  align-items: baseline;
+  gap: 10px;
+  padding: 6px 14px 6px 28px;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.detailRow:hover {
+  background: var(--chip);
+}
+
+.detailTime {
+  font-size: 11px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.detailValue {
+  font-size: 13px;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.detailNote {
+  font-size: 12px;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  padding: 5px 10px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink-2);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+.chip:hover {
+  background: var(--chip);
+  border-color: var(--line-2);
+  color: var(--ink);
+}
+
+.noteList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.noteCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.noteCard:hover {
+  background: var(--chip);
+  border-color: var(--line-2);
+}
+
+.noteMeta {
+  font-size: 11px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.noteBody {
+  font-size: 13.5px;
+  color: var(--ink);
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

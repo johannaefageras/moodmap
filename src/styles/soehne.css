@@ -1,0 +1,711 @@
+/* Söhne */
+
+@font-face {
+  font-family: 'Soehne';
+  src:
+    url('../assets/fonts/Soehne-ExtraLight.woff2') format('woff2'),
+    url('../assets/fonts/Soehne-ExtraLight.woff') format('woff'),
+    url('../assets/fonts/Soehne-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne';
+  src:
+    url('../assets/fonts/Soehne-ExtraLightItalic.woff2') format('woff2'),
+    url('../assets/fonts/Soehne-ExtraLightItalic.woff') format('woff'),
+    url('../assets/fonts/Soehne-ExtraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne';
+  src:
+    url('../assets/fonts/Soehne-Light.woff2') format('woff2'),
+    url('../assets/fonts/Soehne-Light.woff') format('woff'),
+    url('../assets/fonts/Soehne-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne';
+  src:
+    url('../assets/fonts/Soehne-LightItalic.woff2') format('woff2'),
+    url('../assets/fonts/Soehne-LightItalic.woff') format('woff'),
+    url('../assets/fonts/Soehne-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne';
+  src:
+    url('../assets/fonts/Soehne-Regular.woff2') format('woff2'),
+    url('../assets/fonts/Soehne-Regular.woff') format('woff'),
+    url('../assets/fonts/Soehne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne';
+  src:
+    url('../assets/fonts/Soehne-RegularItalic.woff2') format('woff2'),
+    url('../assets/fonts/Soehne-RegularItalic.woff') format('woff'),
+    url('../assets/fonts/Soehne-RegularItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne';
+  src:
+    url('../assets/fonts/Soehne-Medium.woff2') format('woff2'),
+    url('../assets/fonts/Soehne-Medium.woff') format('woff'),
+    url('../assets/fonts/Soehne-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne';
+  src:
+    url('../assets/fonts/Soehne-MediumItalic.woff2') format('woff2'),
+    url('../assets/fonts/Soehne-MediumItalic.woff') format('woff'),
+    url('../assets/fonts/Soehne-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne';
+  src:
+    url('../assets/fonts/Soehne-SemiBold.woff2') format('woff2'),
+    url('../assets/fonts/Soehne-SemiBold.woff') format('woff'),
+    url('../assets/fonts/Soehne-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne';
+  src:
+    url('../assets/fonts/Soehne-SemiBoldItalic.woff2') format('woff2'),
+    url('../assets/fonts/Soehne-SemiBoldItalic.woff') format('woff'),
+    url('../assets/fonts/Soehne-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne';
+  src:
+    url('../assets/fonts/Soehne-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Soehne-Bold.woff') format('woff'),
+    url('../assets/fonts/Soehne-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne';
+  src:
+    url('../assets/fonts/Soehne-BoldItalic.woff2') format('woff2'),
+    url('../assets/fonts/Soehne-BoldItalic.woff') format('woff'),
+    url('../assets/fonts/Soehne-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne';
+  src:
+    url('../assets/fonts/Soehne-ExtraBold.woff2') format('woff2'),
+    url('../assets/fonts/Soehne-ExtraBold.woff') format('woff'),
+    url('../assets/fonts/Soehne-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne';
+  src:
+    url('../assets/fonts/Soehne-ExtraBoldItalic.woff2') format('woff2'),
+    url('../assets/fonts/Soehne-ExtraBoldItalic.woff') format('woff'),
+    url('../assets/fonts/Soehne-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne';
+  src:
+    url('../assets/fonts/Soehne-Black.woff2') format('woff2'),
+    url('../assets/fonts/Soehne-Black.woff') format('woff'),
+    url('../assets/fonts/Soehne-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne';
+  src:
+    url('../assets/fonts/Soehne-BlackItalic.woff2') format('woff2'),
+    url('../assets/fonts/Soehne-BlackItalic.woff') format('woff'),
+    url('../assets/fonts/Soehne-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Söhne Mono */
+
+@font-face {
+  font-family: 'Soehne Mono';
+  src:
+    url('../assets/fonts/SoehneMono-ExtraLight.woff2') format('woff2'),
+    url('../assets/fonts/SoehneMono-ExtraLight.woff') format('woff'),
+    url('../assets/fonts/SoehneMono-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Mono';
+  src:
+    url('../assets/fonts/SoehneMono-ExtraLightItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneMono-ExtraLightItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneMono-ExtraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Mono';
+  src:
+    url('../assets/fonts/SoehneMono-Light.woff2') format('woff2'),
+    url('../assets/fonts/SoehneMono-Light.woff') format('woff'),
+    url('../assets/fonts/SoehneMono-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Mono';
+  src:
+    url('../assets/fonts/SoehneMono-LightItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneMono-LightItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneMono-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Mono';
+  src:
+    url('../assets/fonts/SoehneMono-Regular.woff2') format('woff2'),
+    url('../assets/fonts/SoehneMono-Regular.woff') format('woff'),
+    url('../assets/fonts/SoehneMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Mono';
+  src:
+    url('../assets/fonts/SoehneMono-RegularItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneMono-RegularItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneMono-RegularItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Mono';
+  src:
+    url('../assets/fonts/SoehneMono-Medium.woff2') format('woff2'),
+    url('../assets/fonts/SoehneMono-Medium.woff') format('woff'),
+    url('../assets/fonts/SoehneMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Mono';
+  src:
+    url('../assets/fonts/SoehneMono-MediumItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneMono-MediumItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneMono-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Mono';
+  src:
+    url('../assets/fonts/SoehneMono-SemiBold.woff2') format('woff2'),
+    url('../assets/fonts/SoehneMono-SemiBold.woff') format('woff'),
+    url('../assets/fonts/SoehneMono-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Mono';
+  src:
+    url('../assets/fonts/SoehneMono-SemiBoldItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneMono-SemiBoldItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneMono-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Mono';
+  src:
+    url('../assets/fonts/SoehneMono-Bold.woff2') format('woff2'),
+    url('../assets/fonts/SoehneMono-Bold.woff') format('woff'),
+    url('../assets/fonts/SoehneMono-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Mono';
+  src:
+    url('../assets/fonts/SoehneMono-BoldItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneMono-BoldItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneMono-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Mono';
+  src:
+    url('../assets/fonts/SoehneMono-ExtraBold.woff2') format('woff2'),
+    url('../assets/fonts/SoehneMono-ExtraBold.woff') format('woff'),
+    url('../assets/fonts/SoehneMono-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Mono';
+  src:
+    url('../assets/fonts/SoehneMono-ExtraBoldItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneMono-ExtraBoldItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneMono-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Mono';
+  src:
+    url('../assets/fonts/SoehneMono-Black.woff2') format('woff2'),
+    url('../assets/fonts/SoehneMono-Black.woff') format('woff'),
+    url('../assets/fonts/SoehneMono-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Mono';
+  src:
+    url('../assets/fonts/SoehneMono-BlackItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneMono-BlackItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneMono-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Söhne Breit */
+
+@font-face {
+  font-family: 'Soehne Breit';
+  src:
+    url('../assets/fonts/SoehneBreit-ExtraLight.woff2') format('woff2'),
+    url('../assets/fonts/SoehneBreit-ExtraLight.woff') format('woff'),
+    url('../assets/fonts/SoehneBreit-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Breit';
+  src:
+    url('../assets/fonts/SoehneBreit-ExtraLightItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneBreit-ExtraLightItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneBreit-ExtraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Breit';
+  src:
+    url('../assets/fonts/SoehneBreit-Light.woff2') format('woff2'),
+    url('../assets/fonts/SoehneBreit-Light.woff') format('woff'),
+    url('../assets/fonts/SoehneBreit-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Breit';
+  src:
+    url('../assets/fonts/SoehneBreit-LightItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneBreit-LightItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneBreit-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Breit';
+  src:
+    url('../assets/fonts/SoehneBreit-Regular.woff2') format('woff2'),
+    url('../assets/fonts/SoehneBreit-Regular.woff') format('woff'),
+    url('../assets/fonts/SoehneBreit-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Breit';
+  src:
+    url('../assets/fonts/SoehneBreit-RegularItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneBreit-RegularItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneBreit-RegularItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Breit';
+  src:
+    url('../assets/fonts/SoehneBreit-Medium.woff2') format('woff2'),
+    url('../assets/fonts/SoehneBreit-Medium.woff') format('woff'),
+    url('../assets/fonts/SoehneBreit-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Breit';
+  src:
+    url('../assets/fonts/SoehneBreit-MediumItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneBreit-MediumItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneBreit-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Breit';
+  src:
+    url('../assets/fonts/SoehneBreit-SemiBold.woff2') format('woff2'),
+    url('../assets/fonts/SoehneBreit-SemiBold.woff') format('woff'),
+    url('../assets/fonts/SoehneBreit-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Breit';
+  src:
+    url('../assets/fonts/SoehneBreit-SemiBoldItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneBreit-SemiBoldItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneBreit-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Breit';
+  src:
+    url('../assets/fonts/SoehneBreit-Bold.woff2') format('woff2'),
+    url('../assets/fonts/SoehneBreit-Bold.woff') format('woff'),
+    url('../assets/fonts/SoehneBreit-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Breit';
+  src:
+    url('../assets/fonts/SoehneBreit-BoldItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneBreit-BoldItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneBreit-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Breit';
+  src:
+    url('../assets/fonts/SoehneBreit-ExtraBold.woff2') format('woff2'),
+    url('../assets/fonts/SoehneBreit-ExtraBold.woff') format('woff'),
+    url('../assets/fonts/SoehneBreit-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Breit';
+  src:
+    url('../assets/fonts/SoehneBreit-ExtraBoldItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneBreit-ExtraBoldItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneBreit-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Breit';
+  src:
+    url('../assets/fonts/SoehneBreit-Black.woff2') format('woff2'),
+    url('../assets/fonts/SoehneBreit-Black.woff') format('woff'),
+    url('../assets/fonts/SoehneBreit-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Breit';
+  src:
+    url('../assets/fonts/SoehneBreit-BlackItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneBreit-BlackItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneBreit-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Söhne Schmal */
+
+@font-face {
+  font-family: 'Soehne Schmal';
+  src:
+    url('../assets/fonts/SoehneSchmal-ExtraLight.woff2') format('woff2'),
+    url('../assets/fonts/SoehneSchmal-ExtraLight.woff') format('woff'),
+    url('../assets/fonts/SoehneSchmal-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Schmal';
+  src:
+    url('../assets/fonts/SoehneSchmal-ExtraLightItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneSchmal-ExtraLightItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneSchmal-ExtraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Schmal';
+  src:
+    url('../assets/fonts/SoehneSchmal-Light.woff2') format('woff2'),
+    url('../assets/fonts/SoehneSchmal-Light.woff') format('woff'),
+    url('../assets/fonts/SoehneSchmal-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Schmal';
+  src:
+    url('../assets/fonts/SoehneSchmal-LightItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneSchmal-LightItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneSchmal-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Schmal';
+  src:
+    url('../assets/fonts/SoehneSchmal-Regular.woff2') format('woff2'),
+    url('../assets/fonts/SoehneSchmal-Regular.woff') format('woff'),
+    url('../assets/fonts/SoehneSchmal-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Schmal';
+  src:
+    url('../assets/fonts/SoehneSchmal-RegularItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneSchmal-RegularItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneSchmal-RegularItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Schmal';
+  src:
+    url('../assets/fonts/SoehneSchmal-Medium.woff2') format('woff2'),
+    url('../assets/fonts/SoehneSchmal-Medium.woff') format('woff'),
+    url('../assets/fonts/SoehneSchmal-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Schmal';
+  src:
+    url('../assets/fonts/SoehneSchmal-MediumItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneSchmal-MediumItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneSchmal-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Schmal';
+  src:
+    url('../assets/fonts/SoehneSchmal-SemiBold.woff2') format('woff2'),
+    url('../assets/fonts/SoehneSchmal-SemiBold.woff') format('woff'),
+    url('../assets/fonts/SoehneSchmal-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Schmal';
+  src:
+    url('../assets/fonts/SoehneSchmal-SemiBoldItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneSchmal-SemiBoldItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneSchmal-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Schmal';
+  src:
+    url('../assets/fonts/SoehneSchmal-Bold.woff2') format('woff2'),
+    url('../assets/fonts/SoehneSchmal-Bold.woff') format('woff'),
+    url('../assets/fonts/SoehneSchmal-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Schmal';
+  src:
+    url('../assets/fonts/SoehneSchmal-BoldItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneSchmal-BoldItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneSchmal-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Schmal';
+  src:
+    url('../assets/fonts/SoehneSchmal-ExtraBold.woff2') format('woff2'),
+    url('../assets/fonts/SoehneSchmal-ExtraBold.woff') format('woff'),
+    url('../assets/fonts/SoehneSchmal-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Schmal';
+  src:
+    url('../assets/fonts/SoehneSchmal-ExtraBoldItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneSchmal-ExtraBoldItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneSchmal-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Schmal';
+  src:
+    url('../assets/fonts/SoehneSchmal-Black.woff2') format('woff2'),
+    url('../assets/fonts/SoehneSchmal-Black.woff') format('woff'),
+    url('../assets/fonts/SoehneSchmal-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soehne Schmal';
+  src:
+    url('../assets/fonts/SoehneSchmal-BlackItalic.woff2') format('woff2'),
+    url('../assets/fonts/SoehneSchmal-BlackItalic.woff') format('woff'),
+    url('../assets/fonts/SoehneSchmal-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}

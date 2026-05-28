@@ -1,0 +1,238 @@
+.head {
+  margin-bottom: 20px;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.sub {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Toolbar: navigation + view toggle */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-2);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+.navBtn:hover:not(:disabled) {
+  border-color: var(--ink);
+}
+
+.navBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.todayBtn {
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-2);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.todayBtn:hover {
+  border-color: var(--ink);
+}
+
+.rangeLabel {
+  margin-left: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.filterChip {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  background: var(--surface);
+  color: var(--ink-2);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+.filterChip:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.filterChipOn {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.filterChipOn:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+.empty {
+  margin: 60px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.dim {
+  opacity: 0.55;
+  transition: opacity 0.12s;
+}
+
+/* Month grid */
+.month {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.weekHeader {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.weekHeaderCell {
+  padding: 8px 0;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.monthGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.monthCell {
+  position: relative;
+  min-height: 84px;
+  padding: 8px 10px;
+  background: var(--surface);
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  transition: background 0.12s;
+}
+
+.monthCell:nth-child(7n + 1) {
+  border-left: 0;
+}
+
+.monthCell:nth-child(-n + 7) {
+  border-top: 0;
+}
+
+.monthCell:hover:not(:disabled) {
+  background: var(--chip);
+}
+
+.monthCell:disabled {
+  cursor: default;
+  background: var(--surface);
+}
+
+.monthDayNum {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.outOfMonth .monthDayNum {
+  color: var(--muted-2);
+  font-weight: 400;
+}
+
+.todayCell .monthDayNum {
+  display: inline-grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+.dotRing {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border: 2px solid var(--ink);
+}
+
+@media (max-width: 720px) {
+  .title { font-size: 22px; }
+  .monthCell {
+    min-height: 56px;
+    padding: 6px 6px;
+  }
+  .monthDayNum { font-size: 12px; }
+  .rangeLabel { margin-left: 0; font-size: 14px; }
+  .toolbar { gap: 10px; }
+}

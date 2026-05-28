@@ -1,0 +1,35 @@
+:root {
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --ink: #111111;
+  --ink-2: #2a2a2a;
+  --muted: #6b6b6b;
+  --muted-2: #9a9a9a;
+  --line: #e6e6e1;
+  --line-2: #d8d8d2;
+  --chip: #f0f0ea;
+
+  --accent: #f7339a;
+  --accent-hover: #c82578;
+  --accent-soft: #fce5f0;
+
+  --metric-mood: #f7339a;
+  --metric-anxiety: #ff6b35;
+  --metric-stress: #ffb800;
+  --metric-daylight: #eab308;
+  --metric-energy: #7ed321;
+  --metric-exercise: #00c389;
+  --metric-water: #00bcd4;
+  --metric-sleep: #2196f3;
+  --metric-social: #5b6cff;
+  --metric-concentration: #8e44ec;
+  --metric-alcohol: #c026d3;
+  --metric-drugs: #ff4081;
+  --metric-nicotine: #ff7043;
+  --metric-caffeine: #a0522d;
+
+  --radius: 14px;
+  --radius-sm: 8px;
+
+  --font-sans: 'Soehne', ui-sans-serif, -apple-system, 'Helvetica Neue', system-ui, sans-serif;
+}
